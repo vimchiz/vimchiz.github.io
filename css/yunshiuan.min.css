@@ -12,38 +12,33 @@ header {
     min-height: 100%;
 }
 
-section#headerresearch {
+section#headerresearch,
+section#headerteaching,
+section#headerproject,
+section#headercontact {
     color: black;
-    background-image: url(../img/header/Research-cut.jpg);
     opacity: 1;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 300px;
     background-attachment: fixed;
-    /* background-attachment--Active background image*/
+}
+
+section#headerresearch {
+    background-image: url(../img/header/Research-cut.jpg);
 }
 
 section#headerteaching {
-    color: black;
     background-image: url(../img/header/Teaching-cut.jpg);
-    opacity: 1;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 300px;
-    background-attachment: fixed;
 }
 
 section#headerproject {
-    color: black;
     background-image: url(../img/header/Project-cut2.JPG);
-    opacity: 1;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 300px;
-    background-attachment: fixed;
+}
+
+section#headercontact {
+    background-image: url(../img/header/contact-cut.jpg);
 }
 
 .line,
@@ -59,10 +54,6 @@ section#headerproject {
     border-bottom-color: #000000;
     border-bottom-style: solid;
     padding: 12px 0px 12px 0px
-}
-
-span.large {
-    font-size: 16px
 }
 
 .btn.round {
@@ -308,11 +299,14 @@ fieldset[disabled] .btn-primary:hover {
 
 .btn-xl.active,
 .btn-xl:active,
-.btn-xl:focus,
 .btn-xl:hover,
 .open .dropdown-toggle.btn-xl {
     color: #fff;
     background-color: #fec503;
+}
+
+.btn-xl:focus {
+    color: #fff;
 }
 
 .btn-xl.disabled,
@@ -817,89 +811,6 @@ aside.clients img {
     margin: 50px auto
 }
 
-section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
-    background-position: center;
-    background-repeat: no-repeat
-}
-
-section#contact .section-heading {
-    color: #fff
-}
-
-section#contact .form-group {
-    margin-bottom: 25px
-}
-
-section#contact .form-group input,
-section#contact .form-group textarea {
-    padding: 20px
-}
-
-section#contact .form-group input.form-control {
-    height: auto
-}
-
-section#contact .form-group textarea.form-control {
-    height: 236px
-}
-
-section#contact .form-control:focus {
-    border-color: #fed136;
-    box-shadow: none
-}
-
-section#contact ::-webkit-input-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #eee
-}
-
-section#contact :-moz-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #eee
-}
-
-section#contact ::-moz-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #eee
-}
-
-section#contact :-ms-input-placeholder {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #eee
-}
-
-section#contact .text-danger {
-    color: #e74c3c
-}
-
-footer {
-    padding: 25px 0;
-    text-align: center
-}
-
-footer span.copyright {
-    line-height: 40px;
-    text-transform: uppercase;
-    text-transform: none
-}
-
-footer ul.quicklinks {
-    margin-bottom: 0;
-    line-height: 40px;
-    text-transform: uppercase;
-    text-transform: none
-}
-
 ul.social-buttons {
     margin-bottom: 0
 }
@@ -1030,4 +941,19 @@ img::selection {
 
 img::-moz-selection {
     background: 0 0
+}
+
+div.item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-color: #14289c;
+    border-width: 1px;
+    background-color: #fed136;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
 }
