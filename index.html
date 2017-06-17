@@ -71,6 +71,9 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="nav-project">Research Projects <span class="caret"></span></a>
                         <ul class="dropdown-menu" id="navR1">
                             <li><a class="page-scroll" href="#R1">Personal Values & Risk-taking (fMRI) </a></li>
+
+                            <li><a class="page-scroll" href="#prediction-machine">Prediction Machine</a></li>
+
                             <li><a class="page-scroll" href="#R2">Facebook filter bubbles (Big Data)</a></li>
                         </ul>
                         <!--                        <a class="page-scroll " href="#headerproject">Research Projects</a>-->
@@ -116,7 +119,7 @@
                     <h1 class="section-heading">About Me</h1>
                     <!--The text of this section-->
                     <h3 class="section-subheading">I love Neuroscience and Education.</h3>
-                    <p class="large text-black text-center"> With professonal cognitive neuroscience training , solid research experiences and school teaching experiences, I am currently looking forwards to a PhD program in educational neuroscience. My recent interests are in <b><u>neural development of children's numerical cognition and its implication on education practice.</u></b> I also favor advanced statistics, machine learning approaches for brain data analysis. I dream to evaluate and improve teaching practices on the basis of neural evidences. To bring the dream come true, I am enthusiastic to learn multitple methods to delineate education impact via brain imaging.<br /><br /></p>
+                    <p class="larger text-black text-center"> With professonal cognitive neuroscience training , solid research experiences and school teaching experiences, I am currently looking forwards to a PhD program in educational neuroscience. My recent interests are in <b><u>neural development of children's numerical cognition and its implication on education practice.</u></b> I also favor advanced statistics, machine learning approaches for brain data analysis. I dream to evaluate and improve teaching practices on the basis of neural evidences. To bring the dream come true, I am enthusiastic to learn multitple methods to delineate education impact via brain imaging.<br /><br /></p>
                 </div>
             </div>
             <div class="row text-center">
@@ -125,6 +128,7 @@
                     <!--"col-md-4": Sepcify how to seperate the website-->
                     <img src="img/about/me.jpg" class="img-responsive img-thumbnail" alt="">
                 </div>
+
                 <div class="col-md-6 text-center text-black large">
                     <h4 class="section-heading"> Education </h4>
                     <p class="large"> National Taiwan University </p>
@@ -142,7 +146,6 @@
                         <li>-R, Python, SAS, SPSS</li>
                         <li>-HTML, CSS, JavaScript, JQuery</li>
                     </ul>
-
                 </div>
 
             </div>
@@ -350,6 +353,93 @@
             </div>
         </div>
 
+
+        <div class="container bold-line" id="prediction-machine">
+            <div class="col-lg-12" style="padding-bottom:0px">
+                <h3 class="line text-center">We could predict your risk-taking tendency</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h4> Please fill in your information first.</h4>
+                </div>
+            </div>
+
+            <div class=" row">
+                <div class="col-lg-4 text-center">
+                    <label for="example-number-input" class="col-form-label  large"> Please enter your gender <br> ( F or M ) </label>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <label for="example-number-input" class="col-form-label large">How much do you value <b>"Security"</b> in your life? ( 1~7 )</label>
+                </div>
+                <div class="col-lg-4 text-center">
+
+                    <label for="example-number-input" class="col-form-label text-center large">How much do you value <b>"Hedonism"</b> in your life? ( 1~7 )</label>
+                </div>
+
+            </div>
+            <div class="form-group row">
+
+                <div class="col-lg-4">
+                    <input class="form-control" type="text" value="Please Enter ( e.g. ,F )" id="gender">
+                </div>
+
+                <div class="col-lg-4">
+                    <input class="form-control" type="value" value="Please Enter ( e.g. ,3 )" id="Security">
+                </div>
+
+                <div class="col-lg-4">
+                    <input class="form-control" type="value" value="Please Enter ( e.g., 3 )" id="Hedonism">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h4> Please decide whether to accept or reject the gambling trial below.</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4"> </div>
+                <div class="col-lg-4">
+                    <button id="random" type="button" class="btn btn-xl small threeD round" style="width: 100%;">Generate a gambling trial</button>
+                </div>
+                <div class="col-lg-4"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1"> </div>
+
+                <div class="col-lg-5 text-center">
+                    <label class="text-center large">Winning Probability (%)</label>
+                    <div class="item" id="prob">60 %</div>
+                </div>
+                <div class="col-lg-5 text-center ">
+                    <label class=" large">Stake of the gamble (NTD)</label>
+                    <div class="item" id="mag">20 NTD</div>
+                </div>
+                <div class="col-lg-1"> </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-lg-1"> </div>
+                <div class="col-lg-2 ">
+                    <button type="button" class="btn btn-xl small threeD round" id="predict" style="width: 100%;">Predict</button></div>
+                <label for="example-number-input" class="col-lg-8 col-form-label text-left"> <h4> Predicted Probability of your acceptance ( based on margianl GLMM )</h4></label>
+                <div class="col-lg-1"> </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-lg-1"> </div>
+                <div class="col-lg-10">
+                    <input class="form-control" type="text" id="result">
+                </div>
+                <div class="col-lg-1"> </div>
+
+            </div>
+        </div>
+
+
         <div class="container" id="R2">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -383,8 +473,24 @@
     </section>
 
     <!-- Contact Section -->
+    <section id="headercontact">
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <h1 class="section-heading">Contact</h1>
+            </div>
+        </div>
+    </section>
     <section id="contact">
+        <div class="col-lg-12 text-center text-black large">
+            <ul style="list-style-type: none" class="text-cener">
+                <h4 class="section-heading">Any feedback is welcome!</h4>
 
+                Email: vimchiz@gmail.com
+                <li>Department of Psychology. No. 1, Sec. 4, Roosevelt Rd., Taipei 10617, Taiwan (R.O.C.) </li>
+                <li> Phone: +886 919266403</li>
+            </ul>
+
+        </div>
     </section>
 
 
