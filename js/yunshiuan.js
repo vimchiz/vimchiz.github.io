@@ -109,10 +109,78 @@ $(document).ready(function () {
     $("#About_btn").on('click', function () {
         $("#About_btn").addClass('clicked');
     });
-    //    $("body > *").not("header").on('click', function () {
-    //        $("#About_btn").removeClass('clicked');
-    //    });
     $('#intro').on('mousemove', function () {
         $("#About_btn").removeClass('clicked');
+    });
+
+    //(7)關於計算機的按鈕
+    $("#random").on('click', function () {
+        $("#random").addClass('clicked');
+    });
+    $('#projects').on('mousemove', function () {
+        $("#random").removeClass('clicked');
+    });
+
+    $("#predict").on('click', function () {
+        $("#predict").addClass('clicked');
+    });
+
+    $('#projects').on('mousemove', function () {
+        $("#predict").removeClass('clicked');
+    });
+
+    //(8)計算機
+    // Define random number generators
+    var random = function (start, end) {
+        return Math.floor(Math.random() * (end - start + 1)) + start
+    }
+    //Convert Logit to Probabillity
+    var logit2prob = function (logit) {
+        var odds = Math.exp(logit);
+        var prob = odds / (1 + odds);
+        return prob
+    };
+    $('#random').on('click', function () {
+        var prob = 0;
+        var mag = 0;
+        prob = random(4, 95);
+        mag = random(4, 110);
+
+        // 將顯示勝算和賭額的區域清空
+        $("#prob").empty();
+        $("#mag").empty();
+        // 再把 $div 放到 div#data 內，畫面就能顯示一個數字出來
+        $("#prob").append(String(prob) + " %");
+        $("#mag").append(String(mag) + " NTD");
+    });
+
+    $('#predict').on('click', function () {
+        //Extract value
+        var predict = 0;
+        //Regular Expression
+        var z_prob = Number(/\d+/.exec($('#prob').text()));
+        var z_mag = Number(/\d+/.exec($('#mag').text()));
+        var z_Sec = Number(/\d+/.exec($('#Security').val()));
+        var z_Hed = Number(/\d+/.exec($('#Hedonism').val()));
+        var gender = /(F|M)/.exec($('#gender').text());
+        var MCAR = (z_Sec + z_Hed) / 2;
+
+        //z transformation
+        z_prob = (z_prob - 49.35) / (28.69);
+        z_mag = (z_mag - 55.32) / (40.05);
+        z_Sec = ((z_Sec - MCAR) - (-0.1212)) / (0.6747);
+        z_Hed = ((z_Sec - MCAR) - (0.0807)) / (1.3716);
+        gender = (gender == "F") * (-1) + (gender == "M") * (1);
+
+        //Predict based on Marginal GLMM model
+        predict = 0.32204 + (-0.01224) * (gender) +
+            0.02924 * z_Hed + -0.16881 * z_mag + 5.90464 * z_prob + (-0.38091) * z_Sec + (-0.10082) * z_Hed * z_mag +
+            0.15019 * z_Hed * z_prob + 0.67848 * z_mag * z_prob + 0.11744 * z_mag * z_Sec + 0.90734 * z_prob * z_Sec +
+            0.34679 * z_Hed * z_mag + 0.01904 * z_mag * z_Sec;
+
+        //Convert logit back to p
+        predict = logit2prob(predict);
+        predict = Math.round(predict * 10000) / 100; //round to the second digits
+        $("#result").val(String(predict) + " %");
     });
 });
