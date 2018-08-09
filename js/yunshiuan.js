@@ -142,7 +142,7 @@ $(document).ready(function () {
         $("#predict").removeClass('clicked');
     });
 
-    //(8)計算機
+    //(8)The prediction machine
     // Define random number generators
     var random = function (start, end) {
         return Math.floor(Math.random() * (end - start + 1)) + start
@@ -153,24 +153,28 @@ $(document).ready(function () {
         var prob = odds / (1 + odds);
         return prob
     };
+
     $('#random').on('click', function () {
         var prob = 0;
         var mag = 0;
-        prob = random(4, 95);
-        mag = random(4, 110);
-
-        // 將顯示勝算和賭額的區域清空
+        prob = random(25, 75);
+        //Convert NTD to USD
+        mag = random(4, 110) / 30;
+        //Round to the second decimals and also fix the number of significant dogits
+        mag = mag.toFixed(1);
+        // Clear the fields of mag. and prob.
         $("#prob").empty();
         $("#mag").empty();
-        // 再把 $div 放到 div#data 內，畫面就能顯示一個數字出來
+
+        // Put $div into div#data so that the numbers could be shown
         $("#prob").append(String(prob) + " %");
-        $("#mag").append(String(mag) + " NTD");
+        $("#mag").append(String(mag) + " USD");
     });
 
     $('#predict').on('click', function () {
         //Extract value
         var predict = 0;
-        //Regular Expression
+        //Get the input with regular expression
         var z_prob = Number(/\d+/.exec($('#prob').text()));
         var z_mag = Number(/\d+/.exec($('#mag').text()));
         var z_Sec = Number(/\d+/.exec($('#Security').val()));
@@ -193,7 +197,19 @@ $(document).ready(function () {
 
         //Convert logit back to p
         predict = logit2prob(predict);
-        predict = Math.round(predict * 10000) / 100; //round to the second digits
-        $("#result").val(String(predict) + " %");
+        predict = predict * 100;
+
+        //Print out the predicted outcome
+        if (predict > 50) {
+            //round to the first decimals
+            predict = predict.toFixed(2);
+            var outcome = "Prediction: You would ACCEPT the trial (with " + predict + " % certainty).";
+        } else {
+            predict = 100 - predict;
+            //round to the first decimals
+            predict = predict.toFixed(2);
+            var outcome = "Prediction: You would REJECT the trial (with " + predict + " % certainty).";
+        }
+        $("#result").val(String(outcome));
     });
 });

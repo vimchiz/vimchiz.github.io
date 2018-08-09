@@ -66,8 +66,8 @@
                     </li>
                     <li>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="nav-project">Research Projects <span class="caret"></span></a>
-                        <ul class="dropdown-menu" id="navR1">
-                            <li><a class="page-scroll" href="#R1">Personal Values & Risk-taking (fMRI) </a></li>
+                        <ul class="dropdown-menu" id="nav_R_ADM">
+                            <li><a class="page-scroll" href="#R_ADM">Personal Values & Risk-taking (fMRI) </a></li>
 
                             <li><a class="page-scroll" href="#prediction-machine">Prediction Machine</a></li>
 
@@ -226,7 +226,7 @@
                                 Visiting Researcher, worked under Prof. Edward Hubbard and Prof. Joe Austerweil (08/2017-06/2018)</li>
                             <br>
                             <li>Investigated the neural representation of fraction number in the brain. Using Multi-Voxel Pattern Analysis - Representational Similarity Analysis (MVPA-RSA) approach, fraction magnitude was found to be encoded in a format-dependent fashion in the inferior parietal sulcus (IPS), i.e., both format (e.g., symbolic or non-symbolic fractions) and magnitude information are represented. Cross-sectional age-related effect has also been found (magnitude information is more dominant in adults than children). &nbsp;&nbsp;&nbsp;
-                                <a href="#R1" type="button" class="btn btn-xl btn-small in-page-scroll">More details</a>
+                                <a href="#R_ADM" type="button" class="btn btn-xl btn-small in-page-scroll">More details</a>
                             </li>
                         </ul>
                         <!--  Risk-taking -->
@@ -237,7 +237,7 @@
                                 Research Assistant, worked under Prof. Joshua Goh (10/ 2014 - 08/ 2017)</li>
                             <br>
                             <li>Evaluated the associations between personal values and risk-taking behaviors, by both behavioral and BOLD fMRI responses. <b>GLM, functional connectivity, and graph theory analysis</b> were performed. Security and hedonism were found to serve as an accelerator and a brake, respectively, with respect to risky behaviors. The neural correlates underlying their roles have also been investigated. &nbsp;&nbsp;&nbsp;
-                                <a href="#R1" type="button" class="btn btn-xl btn-small in-page-scroll">More details</a>
+                                <a href="#R_ADM" type="button" class="btn btn-xl btn-small in-page-scroll">More details</a>
                             </li>
                             <li>Excellent Poster Award: Presented as the delegate of NTU at the Joint Psychology Conference of NTU, PKU, and CUHK</li>
                             <li>Presented at the Society for Neuroscience Annual Meeting</li>
@@ -285,7 +285,7 @@
 
     <!--Research project: ADM, personal values and risk-taking-->
     <section id="projects">
-        <div class="container bold-line" id="R1">
+        <div class="container bold-line" id="R_ADM">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Personal values Modulate Risk-taking behaviors: <br> Hedonism as an accelerator and security as a brake</h2>
@@ -319,10 +319,10 @@
                 <div class="row note">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-5 text-center note">
-                        <img src="img/projects/R1_Security_pvalue1.jpg" class="img-responsive img-thumbnail note" alt="" width="70%" height="70%">
+                        <img src="img/projects/ADM_Security_pvalue1.jpg" class="img-responsive img-thumbnail note" alt="" width="70%" height="70%">
                     </div>
                     <div class="col-lg-5 text-center note">
-                        <img src="img/projects/R1_Security_pvalue2.jpg" class="img-responsive img-thumbnail note" alt="" width="80%" height="80%">
+                        <img src="img/projects/ADM_Security_pvalue2.jpg" class="img-responsive img-thumbnail note" alt="" width="80%" height="80%">
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
@@ -338,7 +338,7 @@
                 <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-6 text-center note">
-                        <img src="img/projects/R1_Hedonism_pvalue.jpg" class="img-responsive img-thumbnail note" alt="" width="80%" height="80%">
+                        <img src="img/projects/ADM_Hedonism_pvalue.jpg" class="img-responsive img-thumbnail note" alt="" width="80%" height="80%">
                     </div>
                     <div class="col-lg-4 text-center">
                     </div>
@@ -394,15 +394,16 @@
             <div class="form-group row">
 
                 <div class="col-lg-4">
-                    <input class="form-control" type="text" value="Please Enter ( e.g. ,F )" id="gender">
+                    <input class="form-control" type="text" onfocus="if(this.value == 'Please Enter ( e.g. , F )') { this.value = ''; }" value="Please Enter ( e.g. , F )" id="gender">
+                </div>
+
+
+                <div class="col-lg-4">
+                    <input class="form-control" type="value" onfocus="if(this.value == 'Please Enter ( e.g. , 3 )') { this.value = ''; }" value="Please Enter ( e.g. , 3 )" id="Security">
                 </div>
 
                 <div class="col-lg-4">
-                    <input class="form-control" type="value" value="Please Enter ( e.g. ,3 )" id="Security">
-                </div>
-
-                <div class="col-lg-4">
-                    <input class="form-control" type="value" value="Please Enter ( e.g., 3 )" id="Hedonism">
+                    <input class="form-control" type="value" onfocus="if(this.value == 'Please Enter ( e.g., 3 )') { this.value = ''; }" value="Please Enter ( e.g., 3 )" id="Hedonism">
                 </div>
             </div>
 
@@ -428,8 +429,8 @@
                     <div class="item" id="prob">60 %</div>
                 </div>
                 <div class="col-lg-5 text-center ">
-                    <label class=" large">Stake of the gamble (NTD)</label>
-                    <div class="item" id="mag">20 NTD</div>
+                    <label class=" large">Stake of the trial (USD)</label>
+                    <div class="item" id="mag">1.0 USD</div>
                 </div>
                 <div class="col-lg-1"> </div>
             </div>

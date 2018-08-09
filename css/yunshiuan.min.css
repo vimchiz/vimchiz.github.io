@@ -242,17 +242,17 @@ a#nav-project:focus {
     border-radius: 3px;
 }
 
-ul#navR1 {
+ul#nav_R_ADM {
     background-color: #222;
     color: #fed136;
 }
 
-ul#navR1 li a.page-scroll:hover {
+ul#nav_R_ADM li a.page-scroll:hover {
     color: #fed136;
     background-color: #222;
 }
 
-ul#navR1:focus {
+ul#nav_R_ADM:focus {
     background-color: #222;
     color: #fed136;
 }
