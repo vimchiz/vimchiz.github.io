@@ -190,7 +190,7 @@ h6 {
 
 .text-primary,
 a {
-    color: #003380
+    color: #0066ff
 }
 
 a,
@@ -339,7 +339,12 @@ fieldset[disabled] .btn-xl:hover {
 
 .navbar-custom {
     background-color: #222;
-    border-color: transparent
+    border-color: transparent background-color: #222;
+    padding: 10px 0;
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+    transition: padding .3s;
+    border: none
 }
 
 .navbar-custom .navbar-brand {
@@ -361,7 +366,7 @@ fieldset[disabled] .btn-xl:hover {
 .navbar-custom .navbar-toggle {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff;
-    text-transform: capitalize;
+    text-transform: none;
     font-size: 16px
 }
 
@@ -404,14 +409,7 @@ fieldset[disabled] .btn-xl:hover {
 }
 
 @media (min-width:768px) {
-    .navbar-custom {
-        background-color: #222;
-        padding: 10px 0;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-        border: none
-    }
+
     .navbar-custom .navbar-brand {
         font-size: 2em;
         -webkit-transition: all .3s;
@@ -960,4 +958,29 @@ div.item {
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
+}
+
+/*Do not use bright blue for this kind of href*/
+
+.noHighLight {
+    color: #002db3
+}
+
+/*Hightlight the brain image corresponding to the button clicked*/
+
+img.hightlight {
+    /*    border: 2px solid red;*/
+    box-shadow: 0 0 10px #333;
+    -webkit-box-shadow: 0 0 10px #333;
+    -moz-box-shadow: 0 0 10px #333;
+    -o-box-shadow: 0 0 10px #333;
+    -ms-box-shadow: 0 0 10px #333;
+}
+
+/*Blur the brain image when the corresponding image is unclicked*/
+
+img.blur {
+    opacity: 0.5;
+    /* For IE8 and earlier */
+    filter: alpha(opacity=50);
 }

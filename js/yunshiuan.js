@@ -80,10 +80,12 @@ $(document).ready(function () {
                 }
             }
         });
-    //(3)設定初始頁面的圖片及按鈕狀態
 
-    $("#Hedonism_img").hide();
+    //(3)設定初始頁面的圖片及按鈕狀態
+    $("#Hedonism_beh_img").hide();
+    //    $("#Hedonism_brain_img").hide();
     $("#Security_btn").addClass('clicked');
+
     //(4)維持按鈕點擊後的樣式變化(不受到unfocos影響)
     $("#Security_btn").on('click', function () {
         $("#Security_btn").addClass('clicked');
@@ -95,15 +97,26 @@ $(document).ready(function () {
         $("#Security_btn").removeClass('clicked');
 
     });
+
     //(5)依照按鈕狀態切換圖片
     $("#Security_btn").on('focus', function () {
-        $("#Hedonism_img").hide();
-        $("#Security_img").fadeIn("slow");
+        $("#Hedonism_beh_img").hide();
+        $("#Hedonism_brain_img").removeClass("hightlight");
+        $("#Hedonism_brain_img").addClass("blur");
+
+        $("#Security_beh_img").fadeIn("slow");
+        $("#Security_brain_img").removeClass("blur");
+        $("#Security_brain_img").addClass("hightlight");
     });
 
     $("#Hedonism_btn").on('focus', function () {
-        $("#Security_img").hide();
-        $("#Hedonism_img").fadeIn("slow");
+        $("#Security_beh_img").hide();
+        $("#Security_brain_img").removeClass("hightlight");
+        $("#Security_brain_img").addClass("blur");
+
+        $("#Hedonism_beh_img").fadeIn("slow");
+        $("#Hedonism_brain_img").removeClass("blur");
+        $("#Hedonism_brain_img").addClass("hightlight");
     });
     //(6)回復"關於我"的按鈕之狀態
     $("#About_btn").on('click', function () {
