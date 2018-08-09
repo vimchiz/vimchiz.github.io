@@ -80,11 +80,14 @@ $(document).ready(function () {
                 }
             }
         });
-
+    
+    //Initial Status
     //(3)設定初始頁面的圖片及按鈕狀態
     $("#Hedonism_beh_img").hide();
     //    $("#Hedonism_brain_img").hide();
     $("#Security_btn").addClass('clicked');
+//    $("#Security_brain_img").addClass("hightlight");
+//    $("#Hedonism_brain_img").addClass("blur");
 
     //(4)維持按鈕點擊後的樣式變化(不受到unfocos影響)
     $("#Security_btn").on('click', function () {
