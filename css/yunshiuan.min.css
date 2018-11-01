@@ -1030,3 +1030,7 @@ img.blur {
     background-color: #00BA38;
     color: black;   
 }
+
+.justify {
+   text-align: justify;
+}
