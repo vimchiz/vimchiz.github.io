@@ -242,17 +242,17 @@ a#nav-project:focus {
     border-radius: 3px;
 }
 
-ul#nav_R_ADM {
+ul#nav_Research {
     background-color: #222;
     color: #fed136;
 }
 
-ul#nav_R_ADM li a.page-scroll:hover {
+ul#nav_Research li a.page-scroll:hover {
     color: #fed136;
     background-color: #222;
 }
 
-ul#nav_R_ADM:focus {
+ul#nav_Research:focus {
     background-color: #222;
     color: #fed136;
 }
@@ -983,4 +983,50 @@ img.blur {
     opacity: 0.5;
     /* For IE8 and earlier */
     filter: alpha(opacity=50);
+}
+
+.btn.MDS_2nd {
+    font-size: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+
+
+.btn.MDS_2nd.add_height {
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+.btn.threeD.pink {
+     background-color: #F8766D;
+    color: #808080;   
+}
+
+.btn.threeD.green {
+    background-color: #b3ffc9;
+    color: #808080;   
+}
+
+.btn.threeD.cyan {
+    background-color: #b3cfff;
+    color: #808080;  
+}
+
+.btn.threeD.cyan.clicked {
+    background-color: #619CFF;
+    color: black;  
+}
+
+.btn.threeD.pink.clicked {
+    background-color: #F8766D;
+    color: black;  
+}
+
+.btn.threeD.green.clicked {
+    background-color: #00BA38;
+    color: black;   
 }

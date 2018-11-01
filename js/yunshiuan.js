@@ -80,29 +80,56 @@ $(document).ready(function () {
                 }
             }
         });
-    
+
     //Initial Status
     //(3)設定初始頁面的圖片及按鈕狀態
+    //LAMBDA
+    $("#Adult_2nd_MDS_btn").addClass('clicked');
+    $("#LAMBDA_2nd_MDS_G5_img").hide();
+    $("#LAMBDA_2nd_MDS_G2_img").hide();
+
+    //ADM
     $("#Hedonism_beh_img").hide();
     //    $("#Hedonism_brain_img").hide();
     $("#Security_btn").addClass('clicked');
-//    $("#Security_brain_img").addClass("hightlight");
-//    $("#Hedonism_brain_img").addClass("blur");
+    //    $("#Security_brain_img").addClass("hightlight");
+    //    $("#Hedonism_brain_img").addClass("blur");
 
-    //(4)維持按鈕點擊後的樣式變化(不受到unfocos影響)
+    //(4)維持按鈕點擊後的樣式變化(不受到unfocus,e.g., clicking other buttons,影響)
+    //LAMBDA
+    $("#Adult_2nd_MDS_btn").on('click', function () {
+        $("#Adult_2nd_MDS_btn").addClass('clicked');
+        $("#G2_2nd_MDS_btn").removeClass('clicked');
+        $("#G5_2nd_MDS_btn").removeClass('clicked');
+
+        $("#LAMBDA_2nd_MDS_G2_img").hide();
+        $("#LAMBDA_2nd_MDS_G5_img").hide();
+        $("#LAMBDA_2nd_MDS_adult_img").fadeIn("slow");
+
+    });
+    $("#G5_2nd_MDS_btn").on('click', function () {
+        $("#G5_2nd_MDS_btn").addClass('clicked');
+        $("#Adult_2nd_MDS_btn").removeClass('clicked');
+        $("#G2_2nd_MDS_btn").removeClass('clicked');
+
+        $("#LAMBDA_2nd_MDS_adult_img").hide();
+        $("#LAMBDA_2nd_MDS_G2_img").hide();
+        $("#LAMBDA_2nd_MDS_G5_img").fadeIn("slow");
+    });
+    $("#G2_2nd_MDS_btn").on('click', function () {
+        $("#G2_2nd_MDS_btn").addClass('clicked');
+        $("#Adult_2nd_MDS_btn").removeClass('clicked');
+        $("#G5_2nd_MDS_btn").removeClass('clicked');
+
+        $("#LAMBDA_2nd_MDS_adult_img").hide();
+        $("#LAMBDA_2nd_MDS_G5_img").hide();
+        $("#LAMBDA_2nd_MDS_G2_img").fadeIn("slow");
+    });
+    //ADM
     $("#Security_btn").on('click', function () {
         $("#Security_btn").addClass('clicked');
         $("#Hedonism_btn").removeClass('clicked');
 
-    });
-    $("#Hedonism_btn").on('click', function () {
-        $("#Hedonism_btn").addClass('clicked');
-        $("#Security_btn").removeClass('clicked');
-
-    });
-
-    //(5)依照按鈕狀態切換圖片
-    $("#Security_btn").on('focus', function () {
         $("#Hedonism_beh_img").hide();
         $("#Hedonism_brain_img").removeClass("hightlight");
         $("#Hedonism_brain_img").addClass("blur");
@@ -110,9 +137,12 @@ $(document).ready(function () {
         $("#Security_beh_img").fadeIn("slow");
         $("#Security_brain_img").removeClass("blur");
         $("#Security_brain_img").addClass("hightlight");
-    });
 
-    $("#Hedonism_btn").on('focus', function () {
+    });
+    $("#Hedonism_btn").on('click', function () {
+        $("#Hedonism_btn").addClass('clicked');
+        $("#Security_btn").removeClass('clicked');
+
         $("#Security_beh_img").hide();
         $("#Security_brain_img").removeClass("hightlight");
         $("#Security_brain_img").addClass("blur");
@@ -120,7 +150,30 @@ $(document).ready(function () {
         $("#Hedonism_beh_img").fadeIn("slow");
         $("#Hedonism_brain_img").removeClass("blur");
         $("#Hedonism_brain_img").addClass("hightlight");
+
     });
+
+    //(5)依照按鈕狀態切換圖片 (Merged to the "click" function)
+    //ADM
+    //    $("#Security_btn").on('focus', function () {
+    //        $("#Hedonism_beh_img").hide();
+    //        $("#Hedonism_brain_img").removeClass("hightlight");
+    //        $("#Hedonism_brain_img").addClass("blur");
+    //
+    //        $("#Security_beh_img").fadeIn("slow");
+    //        $("#Security_brain_img").removeClass("blur");
+    //        $("#Security_brain_img").addClass("hightlight");
+    //    });
+
+    //    $("#Hedonism_btn").on('focus', function () {
+    //        $("#Security_beh_img").hide();
+    //        $("#Security_brain_img").removeClass("hightlight");
+    //        $("#Security_brain_img").addClass("blur");
+    //
+    //        $("#Hedonism_beh_img").fadeIn("slow");
+    //        $("#Hedonism_brain_img").removeClass("blur");
+    //        $("#Hedonism_brain_img").addClass("hightlight");
+    //    });
     //(6)回復"關於我"的按鈕之狀態
     $("#About_btn").on('click', function () {
         $("#About_btn").addClass('clicked');
@@ -145,74 +198,75 @@ $(document).ready(function () {
         $("#predict").removeClass('clicked');
     });
 
-    //(8)The prediction machine
-    // Define random number generators
-    var random = function (start, end) {
-        return Math.floor(Math.random() * (end - start + 1)) + start
-    }
-    //Convert Logit to Probabillity
-    var logit2prob = function (logit) {
-        var odds = Math.exp(logit);
-        var prob = odds / (1 + odds);
-        return prob
-    };
-
-    $('#random').on('click', function () {
-        var prob = 0;
-        var mag = 0;
-        prob = random(25, 75);
-        //Convert NTD to USD
-        mag = random(4, 110) / 30;
-        //Round to the second decimals and also fix the number of significant dogits
-        mag = mag.toFixed(1);
-        // Clear the fields of mag. and prob.
-        $("#prob").empty();
-        $("#mag").empty();
-
-        // Put $div into div#data so that the numbers could be shown
-        $("#prob").append(String(prob) + " %");
-        $("#mag").append(String(mag) + " USD");
-    });
-
-    $('#predict').on('click', function () {
-        //Extract value
-        var predict = 0;
-        //Get the input with regular expression
-        var z_prob = Number(/\d+/.exec($('#prob').text()));
-        var z_mag = Number(/\d+/.exec($('#mag').text()));
-        var z_Sec = Number(/\d+/.exec($('#Security').val()));
-        var z_Hed = Number(/\d+/.exec($('#Hedonism').val()));
-        var gender = /(F|M)/.exec($('#gender').text());
-        var MCAR = (z_Sec + z_Hed) / 2;
-
-        //z transformation
-        z_prob = (z_prob - 49.35) / (28.69);
-        z_mag = (z_mag - 55.32) / (40.05);
-        z_Sec = ((z_Sec - MCAR) - (-0.1212)) / (0.6747);
-        z_Hed = ((z_Sec - MCAR) - (0.0807)) / (1.3716);
-        gender = (gender == "F") * (-1) + (gender == "M") * (1);
-
-        //Predict based on Marginal GLMM model
-        predict = 0.32204 + (-0.01224) * (gender) +
-            0.02924 * z_Hed + -0.16881 * z_mag + 5.90464 * z_prob + (-0.38091) * z_Sec + (-0.10082) * z_Hed * z_mag +
-            0.15019 * z_Hed * z_prob + 0.67848 * z_mag * z_prob + 0.11744 * z_mag * z_Sec + 0.90734 * z_prob * z_Sec +
-            0.34679 * z_Hed * z_mag + 0.01904 * z_mag * z_Sec;
-
-        //Convert logit back to p
-        predict = logit2prob(predict);
-        predict = predict * 100;
-
-        //Print out the predicted outcome
-        if (predict > 50) {
-            //round to the first decimals
-            predict = predict.toFixed(2);
-            var outcome = "Prediction: You would ACCEPT the trial (with " + predict + " % certainty).";
-        } else {
-            predict = 100 - predict;
-            //round to the first decimals
-            predict = predict.toFixed(2);
-            var outcome = "Prediction: You would REJECT the trial (with " + predict + " % certainty).";
-        }
-        $("#result").val(String(outcome));
-    });
+    //    //(8)The prediction machine
+    //    // Define random number generators
+    //    var random = function (start, end) {
+    //        return Math.floor(Math.random() * (end - start + 1)) + start
+    //    }
+    //    //Convert Logit to Probabillity
+    //    var logit2prob = function (logit) {
+    //        var odds = Math.exp(logit);
+    //        var prob = odds / (1 + odds);
+    //        return prob
+    //    };
+    //
+    //    $('#random').on('click', function () {
+    //        var prob = 0;
+    //        var mag = 0;
+    //        prob = random(25, 75);
+    //        mag = random(4, 110);
+    //        //For printing, convert NTD to USD
+    //        var magUSD = mag / 30;
+    //        //Round to the second decimals and also fix the number of significant dogits
+    //        magUSD = magUSD.toFixed(1);
+    //        // Clear the fields of mag. and prob.
+    //        $("#prob").empty();
+    //        $("#mag").empty();
+    //
+    //        // Put $div into div#data so that the numbers could be shown
+    //        $("#prob").append(String(prob) + " %");
+    //        $("#mag").append(String(magUSD) + " USD");
+    //    });
+    //
+    //    $('#predict').on('click', function () {
+    //        //Extract value
+    //        var predict = 0;
+    //        //Get the input with regular expression
+    //        var z_prob = Number(/\d+/.exec($('#prob').text()));
+    //        var z_mag = Number(/\d+/.exec($('#mag').text()));
+    //        var z_Sec = Number(/\d+/.exec($('#Security').val()));
+    //        var z_Hed = Number(/\d+/.exec($('#Hedonism').val()));
+    //        var gender = /(F|M)/.exec($('#gender').text());
+    //        var MCAR = (z_Sec + z_Hed) / 2;
+    //
+    //        //z transformation
+    //        z_prob = (z_prob - 49.35) / (28.69);
+    //        z_mag = (z_mag - 55.32) / (40.05);
+    //        z_Sec = ((z_Sec - MCAR) - (-0.1212)) / (0.6747);
+    //        z_Hed = ((z_Sec - MCAR) - (0.0807)) / (1.3716);
+    //        gender = (gender == "F") * (-1) + (gender == "M") * (1);
+    //
+    //        //Predict based on Marginal GLMM model
+    //        predict = 0.32204 + (-0.01224) * (gender) +
+    //            0.02924 * z_Hed + -0.16881 * z_mag + 5.90464 * z_prob + (-0.38091) * z_Sec + (-0.10082) * z_Hed * z_mag +
+    //            0.15019 * z_Hed * z_prob + 0.67848 * z_mag * z_prob + 0.11744 * z_mag * z_Sec + 0.90734 * z_prob * z_Sec +
+    //            0.34679 * z_Hed * z_mag + 0.01904 * z_mag * z_Sec;
+    //
+    //        //Convert logit back to p
+    //        predict = logit2prob(predict);
+    //        predict = predict * 100;
+    //
+    //        //Print out the predicted outcome
+    //        if (predict > 50) {
+    //            //round to the first decimals
+    //            predict = predict.toFixed(2);
+    //            var outcome = "Prediction: You would ACCEPT the trial (with " + predict + " % certainty).";
+    //        } else {
+    //            predict = 100 - predict;
+    //            //round to the first decimals
+    //            predict = predict.toFixed(2);
+    //            var outcome = "Prediction: You would REJECT the trial (with " + predict + " % certainty).";
+    //        }
+    //        $("#result").val(String(outcome));
+    //    });
 });

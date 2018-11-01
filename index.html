@@ -66,10 +66,12 @@
                     </li>
                     <li>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="nav-project">Research Projects <span class="caret"></span></a>
-                        <ul class="dropdown-menu" id="nav_R_ADM">
+                        <ul class="dropdown-menu" id="nav_Research">
+                            <li><a class="page-scroll" href="#R_LAMBDA">Numerical Cognition and Neural Representation (fMRI)</a></li>
+
                             <li><a class="page-scroll" href="#R_ADM">Personal Values & Risk-taking (fMRI) </a></li>
 
-                            <li><a class="page-scroll" href="#prediction-machine">Prediction Machine</a></li>
+                            <!--                          <li><a class="page-scroll" href="#prediction-machine">Prediction Machine</a></li>-->
 
                             <li><a class="page-scroll" href="#R2">Facebook Filter Bubbles (Big Data)</a></li>
                         </ul>
@@ -106,12 +108,10 @@
     </header>
 
     <!-- intro Section -->
-    <!--The section to be jumped to from navigation bar(line:60)-->
-    <!--Each section contains multiple "divs"(elements)-->
+
     <section id="intro">
         <!--Each section contains several divs-->
         <div class="container">
-            <!--To be specified by css-->
             <div class="row">
                 <!--The information of the whole row (e.g. text position)-->
                 <div class="col-lg-12 text-center">
@@ -144,7 +144,7 @@
                     <p class="large text-left"> Delegate of the Joint Psychology Conference of NTU, PKU, and CUHK</p>
                     <!--UW-Madison-->
                     <p class="large text-left"> <b>University of Wisconsin - Madison</b></p>
-                    <p class="large text-left"> Visiting Student (1 year, full-funded, 09/2017-06/2018) </p>
+                    <p class="large text-left"> Visiting Student (1 year, fully-funded, 09/2017-06/2018) </p>
                     <ul style="list-style-type: square" class="text-left">
                         <li>GPA: 4.00 / 4.00</li>
                         <li>Exchange & Visiting International Student Academic Excellence Award</li>
@@ -225,7 +225,7 @@
                             <li>
                                 Visiting Researcher, worked under Prof. Edward Hubbard and Prof. Joe Austerweil (08/2017-06/2018)</li>
                             <br>
-                            <li>Investigated the neural representation of fraction number in the brain. Using Multi-Voxel Pattern Analysis - Representational Similarity Analysis (MVPA-RSA) approach, fraction magnitude was found to be encoded in a format-dependent fashion in the inferior parietal sulcus (IPS), i.e., both format (e.g., symbolic or non-symbolic fractions) and magnitude information are represented. Cross-sectional age-related effect has also been found (magnitude information is more dominant in adults than children). &nbsp;&nbsp;&nbsp;
+                            <li>Investigated the neural representation of fraction number in the brain. Using Multi-Voxel Pattern Analysis - <b>Representational Similarity Analysis  (MVPA-RSA) approach</b>, fraction magnitude was found to be encoded in a format-dependent fashion in the inferior parietal sulcus (IPS), i.e., both format (e.g., symbolic or non-symbolic fractions) and magnitude information are represented. Cross-sectional age-related effect has also been found (magnitude information is more dominant in adults than children). &nbsp;&nbsp;&nbsp;
                                 <a href="#R_ADM" type="button" class="btn btn-xl btn-small in-page-scroll">More details</a>
                             </li>
                         </ul>
@@ -282,14 +282,107 @@
             </div>
         </div>
     </section>
-
-    <!--Research project: ADM, personal values and risk-taking-->
     <section id="projects">
+        <!--Research project: LAMBDA, fraction cognition-->
+        <div class="container bold-line" id="R_LAMBDA">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Fraction Neural Representation In The Human Parietal Cortex: <br> Format-dependent magnitude encoding</h2>
+                    <h3 class="text-center">Research Question </h3>
+
+                    <div class="col-lg-7 text-center">
+                        <h4 class="text-center">Fraction Comparison Task</h4>
+                        <p class="text-center larger">Fraction could take different formats: either symbolic or non-symbolic.</p>
+                        <img src="img/projects/LAMBDA_research_design.png" class="img-responsive img-thumbnail" alt="" id="LAMBDA_research_design">
+                    </div>
+
+                    <div class="col-lg-5 text-center">
+                        <h4 class="text-center">Format-dependent or <br> Format-Independent Representations? </h4>
+                        <p class="text-center larger"> <b>Question:</b> IPS encodes the numeric value of fraction of all formats, but are they encoded in the same way?<br /><br /><br /><br /></p>
+                        <img src="img/projects/LAMBDA_brain_with_legend.png" class="img-responsive img-thumbnail" alt="" id="LAMBDA_brain"> </div>
+
+                    <div class="col-lg-12 text-center">
+                        <h3 class="text-center">Methods</h3>
+                        <h4 class="text-center">Representational Disimmilarity Matrices (RDMs)</h4>
+
+                        <p class="text-left larger">RDMs represent the interrelationship between fractions with different formats and values based on research hypotheses (<b>conceptual RDMs</b>) or empirical fMRI data (<b>neural RDMs</b>).<br /><br />*Note that the log-abosolute magnitude model (log-A) resembles the neural data in IPSs.</p>
+
+                        <img src="img/projects/LAMBDA_base_RDMs.png" class="img-responsive img-thumbnail" alt="" id="LAMBDA_base_RDMs">
+                    </div>
+                    <div class="col-lg-8 text-center">
+                        <h4 class="text-center">Construct Format-dependent representation models: <br>Mixing Magnitude Models with Format RDMs</h4>
+                        <p class="text-left larger"><br />Mixing a magnitude RDM with a format RDM to produce a format-dependent magnitude RDM.<br /><br /><br /><br />*Note that the hybrid model (e.g., GxA-6) resembles the neural data in IPSs better than the pure magnitude model log-A above.<br /><br /></p>
+                        <img src="img/projects/LAMBDA_mixing_conceptual_RDMs.png" class="img-responsive img-thumbnail" alt="" id="LAMBDA_1st_MDS">
+                    </div>
+
+                    <div class="col-lg-4 text-center">
+                        <h4 class="text-center">Multidimensional Scaling (MDS) dipicts the distances between RDMs.</h4>
+                        <p class="text-left larger">Click the buttons to see each group's MDS. (*Note that the hybrid models are closer to IPS neural RDMs)</p>
+
+                        <div class="col-lg-4 text-center" style="padding-top: 0px">
+                            <button type="button" class="btn btn-xl round MDS_2nd add_height threeD pink" id="Adult_2nd_MDS_btn">Adult</button></div>
+
+                        <div class="col-lg-4 text-center" style="padding-top: 0px">
+                            <button type="button" class="btn btn-xl round MDS_2nd threeD green" id="G5_2nd_MDS_btn">5th<br>Graders</button></div>
+                        <div class="col-lg-4 text-center" style="padding-top: 0px">
+                            <button type="button" class="btn btn-xl round MDS_2nd threeD cyan" id="G2_2nd_MDS_btn">2nd<br>Graders</button></div>
+
+                        <div id="LAMBDA_2nd_MDS_adult_img">
+                            <div class="row">
+                                <img src="img/projects/LAMBDA_2nd_MDS_adult.png" class="img-responsive img-thumbnail" alt="">
+                            </div>
+                        </div>
+                        <div id="LAMBDA_2nd_MDS_G5_img">
+                            <div class="row">
+                                <img src="img/projects/LAMBDA_2nd_MDS_G5.png" class="img-responsive img-thumbnail" alt="">
+                            </div>
+                        </div>
+                        <div id="LAMBDA_2nd_MDS_G2_img">
+                            <div class="row">
+                                <img src="img/projects/LAMBDA_2nd_MDS_G2.png" class="img-responsive img-thumbnail" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 text-center">
+                        <h3 class="text-center">Research Results support <br>the Format-dependent Representation of fraction numeric value</h3>
+                        <div class="col-lg-6 text-center">
+                            <h3 class="text-center">Relatedness Test Result</h3>
+                            <p class="text-left larger">Relatedness test result shows that the <b>format-dependent models</b> could better explain the neural IPS RDMs than format-independent models.</p>
+                            <p></p>
+                            <img src="img/projects/LAMBDA_relatedness_test.png" class="img-responsive img-thumbnail" alt="" id="LAMBDA_1st_MDS">
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <h3 class="text-center">Developmental Trend</h3>
+                            <p class="text-left larger"> Adults’s IPSs are more sensitive to the abstract magnitude information and is less format-dependent. </p>
+                            <p></p>
+                            <img src="img/projects/LAMBDA_developmental_trend.png" class="img-responsive img-thumbnail" alt="" id="LAMBDA_1st_MDS">
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!--Research project: ADM, personal values and risk-taking-->
         <div class="container bold-line" id="R_ADM">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Personal values Modulate Risk-taking behaviors: <br> Hedonism as an accelerator and security as a brake</h2>
+                    <h2>Personal Core Values Modulate Risk-taking behaviors: <br> Hedonism as an accelerator and security as a brake</h2>
                     <h3 class="text-center">Research Model</h3>
+                    <ul>
+                        <li>
+                            <p class="larger text-left">Core value (i.e., the values you appreciate in life) modulates the assignment of subjective economic value and further exerts its effect on behavior. </p>
+                        </li>
+                        <li>
+                            <p class="larger text-left">Core value effect is modulated by the strength of situation factor, with amplified effect under weak situation and weaken effect under strong situation. </p>
+                        </li>
+                    </ul>
+
                     <div>
                         <img src="img/projects/ADM_Research_Model.jpg" class="img-responsive img-thumbnail" alt="" width="50%" height="50%">
                     </div>
@@ -345,8 +438,9 @@
                     <div class="col-lg-1"></div>
                 </div>
             </div>
+
             <!--Figure for Brian Result -->
-            <h4 class="text-center" style="padding-bottom:0px;margin-bottom:0px">Both core values show magnitude-modulated effect right DLPFC region</h4>
+            <h4 class="text-center" style="padding-bottom:0px;margin-bottom:0px">Both core values show magnitude-modulated effect in right DLPFC region</h4>
 
             <div id="GLM_Result_Brain">
                 <div class="row">
@@ -366,92 +460,95 @@
             </div>
         </div>
 
-        <!--Prediction Machine-->
-        <div class="container bold-line" id="prediction-machine">
-            <div class="col-lg-12" style="padding-bottom:0px">
-                <h3 class="line text-center">We could predict your risk-taking tendency <br> ( based on the research result above )</h3>
-            </div>
 
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h4> Please fill in your information first.</h4>
-                </div>
-            </div>
+        <!--
+ Prediction Machine
+<div class="container bold-line" id="prediction-machine">
+    <div class="col-lg-12" style="padding-bottom:0px">
+        <h3 class="line text-center">We could predict your risk-taking tendency <br> ( based on the research result above )</h3>
+    </div>
 
-            <div class=" row">
-                <div class="col-lg-4 text-center">
-                    <label for="example-number-input" class="col-form-label  large"> Please enter your gender <br> ( F or M ) </label>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <label for="example-number-input" class="col-form-label large">How much do you value <b>"Security"</b> in your life? ( 1~7 )</label>
-                </div>
-                <div class="col-lg-4 text-center">
-
-                    <label for="example-number-input" class="col-form-label text-center large">How much do you value <b>"Hedonism"</b> in your life? ( 1~7 )</label>
-                </div>
-
-            </div>
-            <div class="form-group row">
-
-                <div class="col-lg-4">
-                    <input class="form-control" type="text" onfocus="if(this.value == 'Please Enter ( e.g. , F )') { this.value = ''; }" value="Please Enter ( e.g. , F )" id="gender">
-                </div>
-
-
-                <div class="col-lg-4">
-                    <input class="form-control" type="value" onfocus="if(this.value == 'Please Enter ( e.g. , 3 )') { this.value = ''; }" value="Please Enter ( e.g. , 3 )" id="Security">
-                </div>
-
-                <div class="col-lg-4">
-                    <input class="form-control" type="value" onfocus="if(this.value == 'Please Enter ( e.g., 3 )') { this.value = ''; }" value="Please Enter ( e.g., 3 )" id="Hedonism">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h4>We could predict your decision ( acceptance or rejection ) on the gambling trial below.</h4>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4"> </div>
-                <div class="col-lg-4">
-                    <button id="random" type="button" class="btn btn-xl small threeD round" style="width: 100%;">Generate a gambling trial</button>
-                </div>
-                <div class="col-lg-4"> </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-1"> </div>
-
-                <div class="col-lg-5 text-center">
-                    <label class="text-center large">Winning Probability (%)</label>
-                    <div class="item" id="prob">60 %</div>
-                </div>
-                <div class="col-lg-5 text-center ">
-                    <label class=" large">Stake of the trial (USD)</label>
-                    <div class="item" id="mag">1.0 USD</div>
-                </div>
-                <div class="col-lg-1"> </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-lg-1"> </div>
-                <div class="col-lg-2 ">
-                    <button type="button" class="btn btn-xl small threeD round" id="predict" style="width: 100%;">Predict</button></div>
-                <label for="example-number-input" class="col-lg-8 col-form-label text-left"> <h4> Predicted Probability of your acceptance (based on margianl GLMM)</h4></label>
-                <div class="col-lg-1"> </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-lg-1"> </div>
-                <div class="col-lg-10">
-                    <input class="form-control" type="text" id="result">
-                </div>
-                <div class="col-lg-1"> </div>
-
-            </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h4> Please fill in your information first.</h4>
         </div>
+    </div>
+
+    <div class=" row">
+        <div class="col-lg-4 text-center">
+            <label for="example-number-input" class="col-form-label  large"> Please enter your gender <br> ( F or M ) </label>
+        </div>
+        <div class="col-lg-4 text-center">
+            <label for="example-number-input" class="col-form-label large">How much do you value <b>"Security"</b> in your life? ( 1~7 )</label>
+        </div>
+        <div class="col-lg-4 text-center">
+
+            <label for="example-number-input" class="col-form-label text-center large">How much do you value <b>"Hedonism"</b> in your life? ( 1~7 )</label>
+        </div>
+
+    </div>
+    <div class="form-group row">
+
+        <div class="col-lg-4">
+            <input class="form-control" type="text" onfocus="if(this.value == 'Please Enter ( e.g. , F )') { this.value = ''; }" value="Please Enter ( e.g. , F )" id="gender">
+        </div>
+
+
+        <div class="col-lg-4">
+            <input class="form-control" type="value" onfocus="if(this.value == 'Please Enter ( e.g. , 3 )') { this.value = ''; }" value="Please Enter ( e.g. , 3 )" id="Security">
+        </div>
+
+        <div class="col-lg-4">
+            <input class="form-control" type="value" onfocus="if(this.value == 'Please Enter ( e.g., 3 )') { this.value = ''; }" value="Please Enter ( e.g., 3 )" id="Hedonism">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h4>We could predict your decision ( acceptance or rejection ) on the gambling trial below.</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4"> </div>
+        <div class="col-lg-4">
+            <button id="random" type="button" class="btn btn-xl small threeD round" style="width: 100%;">Generate a gambling trial</button>
+        </div>
+        <div class="col-lg-4"> </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1"> </div>
+
+        <div class="col-lg-5 text-center">
+            <label class="text-center large">Winning Probability (%)</label>
+            <div class="item" id="prob">60 %</div>
+        </div>
+        <div class="col-lg-5 text-center ">
+            <label class=" large">Stake of the trial (USD)</label>
+            <div class="item" id="mag">1.0 USD</div>
+        </div>
+        <div class="col-lg-1"> </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-lg-1"> </div>
+        <div class="col-lg-2 ">
+            <button type="button" class="btn btn-xl small threeD round" id="predict" style="width: 100%;">Predict</button></div>
+        <label for="example-number-input" class="col-lg-8 col-form-label text-left"> <h4> Predicted Probability of your acceptance (based on margianl GLMM)</h4></label>
+        <div class="col-lg-1"> </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-lg-1"> </div>
+        <div class="col-lg-10">
+            <input class="form-control" type="text" id="result">
+        </div>
+        <div class="col-lg-1"> </div>
+
+    </div>
+</div>
+-->
 
         <!--Research project: Facebook filter bubble-->
         <div class="container" id="R2">
@@ -556,6 +653,8 @@
                 Email: yunshiuan.chuang@gmail.com
                 <li>Department of Psychology. No. 1, Sec. 4, Roosevelt Rd., Taipei 10617, Taiwan (R.O.C.) </li>
                 <li> Phone: +886 919266403</li>
+                <li><br><br><br></li>
+                <li style="font-size: 10px"><i>Acknowledge: I thank Julian Lin for permitting me to use his amazing photo of the NTU library as my website cover picture.</i></li>
             </ul>
 
         </div>
