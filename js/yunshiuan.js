@@ -174,27 +174,5 @@ $(document).ready(function () {
     //        $("#Hedonism_brain_img").removeClass("blur");
     //        $("#Hedonism_brain_img").addClass("hightlight");
     //    });
-    //(6)回復"關於我"的按鈕之狀態
-    $("#About_btn").on('click', function () {
-        $("#About_btn").addClass('clicked');
-    });
-    $('#intro').on('mousemove', function () {
-        $("#About_btn").removeClass('clicked');
-    });
 
-    //(7)關於計算機的按鈕
-    $("#random").on('click', function () {
-        $("#random").addClass('clicked');
-    });
-    $('#projects').on('mousemove', function () {
-        $("#random").removeClass('clicked');
-    });
-
-    $("#predict").on('click', function () {
-        $("#predict").addClass('clicked');
-    });
-
-    $('#projects').on('mousemove', function () {
-        $("#predict").removeClass('clicked');
-    });
 });
