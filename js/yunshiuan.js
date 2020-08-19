@@ -1,4 +1,15 @@
+/** 
+ * Load the functions once the HTML content is ready.
+ */
 $(document).ready(function () {
+    console.log("Load:" + document);
+    /**  
+     * Place the navigation bar
+     */
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+
     //(1)控制NavBar的動態功能
     (function ($) { //function($)為匿名方法(anonymous function)
         "use strict"; //宣告只用"strict"的編碼方式
@@ -12,8 +23,15 @@ $(document).ready(function () {
             //以動畫的方式，透過scrollTop將頁面移到a.page-scroll中
             //href的值之所在(透過offset()回報座標值:top & left)
             //僅使用回報的top的值
+            // get tge string of the href
+            var targetHref = $anchor.attr('href');
+            // remove the leading 'html.index' from 'html.index#intro'
+            targetHref = targetHref.match(/#.*/)[0];
             $('html, body').stop().animate({
-                scrollTop: ($($anchor.attr('href')).offset().top - 50)
+                // find the div with JQuery selector $($anchor.attr('href'))
+                // - e.g., when $anchor.attr('href') = '#intro,  then '$(#intro) will select the div with # intro
+                // - note that $(html.index#intro) is not supported by JQuery
+                scrollTop: ($(targetHref).offset().top - 50)
             }, 1250, 'easeInOutExpo'); //指定animate的加速度函數為easeInOutExpo;且在1250ms內執行完畢
             event.preventDefault(); //阻止按鈕的預設功能
         });
@@ -22,6 +40,7 @@ $(document).ready(function () {
         //scrollpsy的功能即為所需
         //標的物件為navbar-fixed-top
         //offset:控制要延宕幾個像素材切換
+        //TODO: This feature is currently broken
         $('body').scrollspy({
             target: '.navbar-fixed-top',
             offset: 51
@@ -36,8 +55,7 @@ $(document).ready(function () {
             offset: {
                 top: 100
             }
-        })
-
+        });
     })(jQuery); // 宣告停止使用strict的編碼方式
 
     //(2)控制頁面內按鈕功能(in-page-scroll(Items not in the Navbar))
@@ -73,9 +91,9 @@ $(document).ready(function () {
                         if ($target.is(":focus")) { // 檢驗是否已經聚焦
                             return false;
                         } else {
-                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.attr('tabindex', '-1'); // Adding tab index for elements that are not focusable
                             $target.focus(); // 重新嘗試聚焦
-                        };
+                        }
                     });
                 }
             }
@@ -174,5 +192,4 @@ $(document).ready(function () {
     //        $("#Hedonism_brain_img").removeClass("blur");
     //        $("#Hedonism_brain_img").addClass("hightlight");
     //    });
-
 });
