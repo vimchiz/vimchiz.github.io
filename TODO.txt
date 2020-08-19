@@ -1,0 +1,2 @@
+- Use "cards" for projects
+- Separate the teaching experience
