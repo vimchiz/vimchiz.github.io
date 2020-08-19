@@ -1,1 +1,0 @@
-(1) Enable the synchronization of the page scrolling and the highlight of the tab in the nav bar.

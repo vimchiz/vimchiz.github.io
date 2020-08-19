@@ -3,12 +3,12 @@
  */
 $(document).ready(function () {
     // console.log("Load:" + document);
-    /**  
-     * Place the navigation bar
-     */
-    $.get("/navbar.html", function (data) {
-        $("#nav-placeholder").replaceWith(data);
-    });
+    // /**  
+    //  * Place the navigation bar
+    //  */
+    // $.get("/navbar.html", function (data) {
+    //     $("#nav-placeholder").replaceWith(data);
+    // });
 
     //(1)控制NavBar的動態功能
     (function ($) { //function($)為匿名方法(anonymous function)
@@ -27,7 +27,7 @@ $(document).ready(function () {
             // get tge string of the href
             var targetHref = $anchor.attr('href');
             // remove the leading 'html.index' from 'html.index#intro'
-            targetHref = targetHref.match(/#.*/)[0];
+            // targetHref = targetHref.match(/#.*/)[0];
             $('html, body').stop().animate({
                 // find the div with JQuery selector $($anchor.attr('href'))
                 // - e.g., when $anchor.attr('href') = '#intro,  then '$(#intro) will select the div with # intro
