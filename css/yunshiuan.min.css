@@ -487,9 +487,6 @@ section h3.section-subheading {
     font-style: italic
 }
 
-section {
-    padding: 70px 0
-}
 
 section h1.section-heading {
     font-size: 40px;
@@ -524,7 +521,7 @@ section h3.section-subheading {
 
 @media (min-width:768px) {
     section {
-        padding: 70px 0
+        padding: 40px 0
     }
 }
 
