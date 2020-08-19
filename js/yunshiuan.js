@@ -2,7 +2,7 @@
  * Load the functions once the HTML content is ready.
  */
 $(document).ready(function () {
-    console.log("Load:" + document);
+    // console.log("Load:" + document);
     /**  
      * Place the navigation bar
      */
@@ -13,8 +13,9 @@ $(document).ready(function () {
     //(1)控制NavBar的動態功能
     (function ($) { //function($)為匿名方法(anonymous function)
         "use strict"; //宣告只用"strict"的編碼方式
-        //函數一:點擊Navbar的物件，卷軸移至對應位置
-        //當點擊發生時，對a.page-scroll物件執行函數function(a)
+        /*
+         * Event handler: when clicking the tab in the navbar, scroll the page to the target
+         */
         $('a.page-scroll').on('click', function (event) {
             var $anchor = $(this); //宣告$anchor為該物件的值
 
@@ -36,8 +37,9 @@ $(document).ready(function () {
             event.preventDefault(); //阻止按鈕的預設功能
         });
 
-        //函數二:依照卷軸位置,即時更新Navbar物件的螢光標記
-        //scrollpsy的功能即為所需
+        /* 
+         * Synchronize the page scrolling and the highlight of tab in the nav bar
+         */
         //標的物件為navbar-fixed-top
         //offset:控制要延宕幾個像素材切換
         //TODO: This feature is currently broken
