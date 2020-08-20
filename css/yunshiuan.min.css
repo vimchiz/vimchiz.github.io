@@ -50,16 +50,18 @@ section#headercontact {
     height: 50px;
 }
 
-img.icon-badge:hover {
-    height: 50px;
-    margin-top: 5px;
-}
 
-img.icon-badge{
+img.icon-badge {
     padding-left: 2px;
     padding-right: 2px;
     margin-top: 10px;
 }
+
+img.icon-badge:hover {
+    height: 50px;
+    margin-top: 0px;
+}
+
 img.center-image {
     margin-left: auto;
     margin-right: auto;
@@ -170,17 +172,21 @@ body {
     webkit-tap-highlight-color: #fed136
 }
 
-p {
-    font-size: 14px;
+p,span {
+    font-size: 16px;
     line-height: 1.2
 }
 
-.large {
-    font-size: 16px
+li {
+    font-size: 16px;
 }
 
-.larger {
+p,span.large {
     font-size: 18px
+}
+
+p,span.larger {
+    font-size: 20px
 }
 
 .line {
@@ -198,7 +204,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: capitalize;
     font-weight: 700
 }
@@ -523,20 +529,20 @@ section h2.section-heading {
 section h3.section-heading {
     font-size: 28px;
     margin-top: 0;
-    margin-bottom: 15px
+    /* margin-bottom: 15px */
 }
 
 section h4.section-heading {
     font-size: 22px;
     margin-top: 0;
-    margin-bottom: 15px
+    /* margin-bottom: 15px */
 }
 
 section h3.section-subheading {
     font-size: 20px;
     text-transform: none;
     font-weight: 400;
-    margin-bottom: 75px
+    /* margin-bottom: 75px */
 }
 
 @media (min-width:768px) {
