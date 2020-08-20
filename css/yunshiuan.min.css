@@ -46,6 +46,20 @@ section#headercontact {
     background-image: url(../img/header/contact-cut.jpg);
 }
 
+.badge-container {
+    height: 45px;
+}
+
+img.icon-badge:hover {
+    height: 45px;
+}
+
+img.center-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 .line {
     border-bottom-width: 1px;
     border-bottom-color: rgb(221, 221, 221);
