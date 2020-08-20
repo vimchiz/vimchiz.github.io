@@ -47,13 +47,17 @@ section#headercontact {
 }
 
 .badge-container {
-    height: 45px;
+    height: 50px;
 }
 
 img.icon-badge:hover {
-    height: 45px;
+    height: 50px;
 }
 
+img.icon-badge{
+    padding-left: 2px;
+    padding-right: 2px;
+}
 img.center-image {
     margin-left: auto;
     margin-right: auto;
