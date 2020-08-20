@@ -1,3 +1,4 @@
 - Use "cards" for projects
 - Separate the teaching experience
 - add href for the institutions
+- Add badges (LinkedIn etc.) to the "about me" section
