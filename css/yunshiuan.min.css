@@ -175,7 +175,8 @@ body {
     webkit-tap-highlight-color: #fed136
 }
 
-p,span {
+p,
+span {
     font-size: 16px;
     line-height: 1.2
 }
@@ -184,11 +185,13 @@ li {
     font-size: 16px;
 }
 
-p,span.large {
+p.large,
+span.large {
     font-size: 18px
 }
 
-p,span.larger {
+p.larger,
+span.larger {
     font-size: 20px
 }
 
