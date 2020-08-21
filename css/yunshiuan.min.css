@@ -1,9 +1,9 @@
-
 /* the first container in the page below the nav bar */
 .top-container {
     padding-top: 0px;
 }
-section#headerpage{
+
+section#headerpage {
     color: black;
     opacity: 1;
     background-position: top;
@@ -30,9 +30,10 @@ section#headercontact {
 /* section#headerresearch {
     background-image: url(../img/header/Research-cut.jpg);
 } */
-section#headerpage{
+section#headerpage {
     background-image: url(../img/header-library_2_cropped.jpg);
 }
+
 section#headerpublication {
     background-image: url(../img/header/Publication-compressed-bright.JPG);
 }
