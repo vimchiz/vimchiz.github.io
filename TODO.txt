@@ -2,3 +2,6 @@
 - Separate the teaching experience
 - add href for the institutions
 - consider adding an icon for each degree
+- consider using different background colors for different sections
+- Add the java investor assistant to Github and set it as a public repo
+- Consider making the ToMNET and FracNet project public
