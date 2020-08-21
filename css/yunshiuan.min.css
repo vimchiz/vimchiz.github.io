@@ -201,6 +201,15 @@ li.larger {
     font-size: 20px
 }
 
+div.card {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: .25rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
 .line {
     border-bottom-width: 1px;
     border-bottom-color: rgb(221, 221, 221);
