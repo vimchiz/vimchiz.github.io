@@ -189,12 +189,14 @@ li {
 }
 
 p.large,
-span.large {
+span.large,
+li.large {
     font-size: 18px
 }
 
 p.larger,
-span.larger {
+span.larger,
+li.larger {
     font-size: 20px
 }
 
