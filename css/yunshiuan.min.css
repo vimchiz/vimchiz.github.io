@@ -1,20 +1,15 @@
-/* header {
-    background-image: url(../img/header-library_2.jpg);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-align: center;
-    color: #fff;
-    min-height: 100%;
-} */
 
 /* the first container in the page below the nav bar */
 .top-container {
-    padding-top: 50px;
+    padding-top: 0px;
+}
+section#headerpage{
+    color: black;
+    opacity: 1;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 150px;
+    background-attachment: fixed;
 }
 
 section#headerpublication,
@@ -35,7 +30,9 @@ section#headercontact {
 /* section#headerresearch {
     background-image: url(../img/header/Research-cut.jpg);
 } */
-
+section#headerpage{
+    background-image: url(../img/header-library_2_cropped.jpg);
+}
 section#headerpublication {
     background-image: url(../img/header/Publication-compressed-bright.JPG);
 }
