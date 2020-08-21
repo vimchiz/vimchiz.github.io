@@ -17,7 +17,9 @@
     padding-top: 50px;
 }
 
-section#headerresearch,
+section#headerpublication,
+section#headerexperience,
+/* section#headerresearch, */
 section#headerteaching,
 section#headerproject,
 section#headercontact {
@@ -26,13 +28,13 @@ section#headercontact {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 300px;
+    min-height: 200px;
     background-attachment: fixed;
 }
 
-section#headerresearch {
+/* section#headerresearch {
     background-image: url(../img/header/Research-cut.jpg);
-}
+} */
 
 section#headerpublication {
     background-image: url(../img/header/Publication-compressed-bright.JPG);
