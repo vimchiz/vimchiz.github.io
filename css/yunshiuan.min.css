@@ -34,23 +34,24 @@ section#headerresearch {
     background-image: url(../img/header/Research-cut.jpg);
 }
 
-section#headerteaching {
-    background-image: url(../img/header/Teaching-cut.jpg);
+section#headerpublication {
+    background-image: url(../img/header/Publication-compressed-bright.JPG);
 }
-
+section#headerexperience {
+    background-image: url(../img/header/Experience-bright.png);
+}
 section#headerproject {
-    background-image: url(../img/header/Project-cut2.JPG);
+    background-image: url(../img/header/Project-cut.jpg);
 }
-
+section#headerteaching {
+    background-image: url(../img/header/Teaching-cut-compressed.jpg);
+}
 section#headercontact {
-    background-image: url(../img/header/contact-cut.jpg);
+    background-image: url(../img/header/contact-cut-compressed.jpg);
 }
-
 .badge-container {
     height: 50px;
 }
-
-
 img.icon-badge {
     padding-left: 2px;
     padding-right: 2px;
