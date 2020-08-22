@@ -5,3 +5,4 @@
 - consider using different background colors for different sections
 - Add the java investor assistant to Github and set it as a public repo
 - Consider making the ToMNET and FracNet project public
+- change the header image for the professional experiences to a image without text
