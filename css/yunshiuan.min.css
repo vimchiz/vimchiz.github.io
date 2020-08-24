@@ -185,19 +185,23 @@ span {
     line-height: 1.2
 }
 
-li {
+li[class=""] {
     font-size: 16px;
 }
 
 p.large,
 span.large,
-li.large {
+li.large,
+ul.large,
+ol.large {
     font-size: 18px
 }
 
 p.larger,
 span.larger,
-li.larger {
+li.larger,
+ul.large,
+ol.large {
     font-size: 20px
 }
 
