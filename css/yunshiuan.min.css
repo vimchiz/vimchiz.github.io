@@ -452,7 +452,14 @@ fieldset[disabled] .btn-xl:hover {
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a:hover {
     color: #fed136;
-    outline: 0
+    outline: 0;
+    border-radius: 0
+}
+
+a.focus {
+    border-radius: 3px;
+    color: #fff;
+    background-color: #fed136
 }
 
 .navbar-custom .navbar-nav>.active>a {

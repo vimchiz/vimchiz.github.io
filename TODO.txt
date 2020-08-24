@@ -6,4 +6,3 @@
 - Add the java investor assistant to Github and set it as a public repo
 - Consider making the ToMNET and FracNet project public
 - change the header image for the professional experiences to a image without text
-- highlight the "project" tab in the navbar in the popped up project page

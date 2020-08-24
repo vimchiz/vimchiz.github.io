@@ -2,7 +2,7 @@
  * The script for LAMBDA.html
  */
 $(document).ready(function () {
-  /**  
+  /*
    * Place the navigation bar
    */
   $.get("/navbar.html", function (data) {
@@ -102,3 +102,26 @@ $(document).ready(function () {
     $("#LAMBDA_2nd_MDS_G2_img").fadeIn("slow");
   });
 });
+
+/** 
+ * Run after $(document).ready()
+ * - ensure the navbar is already set up
+ */
+window.onload = function () {
+  $("#nav-project").addClass("focus");
+  /**
+   * Hover in
+   */
+  $("#nav-project").hover(function () {
+      $("#nav-project").css("background-color", "#fec503");
+      $("#nav-project").css("color", "#fff");
+
+    },
+    /**
+     * Hover out
+     */
+    function () {
+      $("#nav-project").css("background-color", "#fed136");
+      $("#nav-project").css("color", "#fff");
+    });
+};

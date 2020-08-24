@@ -61,3 +61,25 @@ $(document).ready(function () {
 
   });
 });
+/** 
+ * Run after $(document).ready()
+ * - ensure the navbar is already set up
+ */
+window.onload = function () {
+  $("#nav-project").addClass("focus");
+  /**
+   * Hover in
+   */
+  $("#nav-project").hover(function () {
+      $("#nav-project").css("background-color", "#fec503");
+      $("#nav-project").css("color", "#fff");
+
+    },
+    /**
+     * Hover out
+     */
+    function () {
+      $("#nav-project").css("background-color", "#fed136");
+      $("#nav-project").css("color", "#fff");
+    });
+};
