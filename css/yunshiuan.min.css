@@ -27,9 +27,6 @@ section#headercontact {
     background-attachment: fixed;
 }
 
-/* section#headerresearch {
-    background-image: url(../img/header/Research-cut.jpg);
-} */
 section#headerpage {
     background-image: url(../img/header-library_2_cropped.jpg);
 }
@@ -53,6 +50,7 @@ section#headerteaching {
 section#headercontact {
     background-image: url(../img/header/contact-cut-compressed.jpg);
 }
+
 
 .badge-container {
     height: 50px;
@@ -294,23 +292,8 @@ a#nav-project:focus {
     border-radius: 3px;
 }
 
-ul#nav_Research {
-    background-color: #222;
-    color: #fed136;
-}
-
 a.page-scroll {
     background-color: #222;
-}
-
-ul#nav_Research li a.page-scroll:hover {
-    color: #fed136;
-    background-color: #222;
-}
-
-ul#nav_Research:focus {
-    background-color: #222;
-    color: #fed136;
 }
 
 .btn-primary.disabled,
