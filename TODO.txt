@@ -1,4 +1,4 @@
-- Use "cards" for projects
+- Add the "link" mark while hovering over the project cards
 - Separate the teaching experience
 - add href for the institutions
 - consider adding an icon for each degree
