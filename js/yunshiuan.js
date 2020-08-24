@@ -85,7 +85,7 @@ $(document).ready(function () {
                     //對html中的body進行animate()
                     //
                     $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 50
+                        scrollTop: target.offset().top - 100
                     }, 1250, function () {
                         //在動畫之後，確保物件已焦距
                         var $target = $(target);
