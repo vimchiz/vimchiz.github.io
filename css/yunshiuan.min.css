@@ -218,13 +218,6 @@ div.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.line {
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(221, 221, 221);
-    border-bottom-style: solid;
-    padding: 12px 0px 12px 0px
-}
-
 .btn-primary,
 .btn-xl,
 h1,
