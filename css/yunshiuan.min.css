@@ -15,7 +15,7 @@ section#headerpage {
 section#headerpublication,
 section#headerexperience,
 /* section#headerresearch, */
-section#headerteaching,
+section#headerother,
 section#headerproject,
 section#headercontact {
     color: black;
@@ -43,7 +43,7 @@ section#headerproject {
     background-image: url(../img/header/Project-cut.jpg);
 }
 
-section#headerteaching {
+section#headerother {
     background-image: url(../img/header/Teaching-cut-compressed.jpg);
 }
 
@@ -250,6 +250,14 @@ div.overlay>img {
 }
 
 #R_ADM>div.overlay>img {
+    margin-top: 30px;
+}
+
+#teaching_exp>div.overlay {
+    height: 300px;
+}
+
+#teaching_exp>div.overlay>img {
     margin-top: 30px;
 }
 

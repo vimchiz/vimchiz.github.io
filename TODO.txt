@@ -1,4 +1,3 @@
-- Separate the teaching experience
 - add href for the institutions
 - consider adding an icon for each degree
 - consider using different background colors for different sections

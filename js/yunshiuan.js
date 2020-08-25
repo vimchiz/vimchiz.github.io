@@ -105,6 +105,7 @@ $(document).ready(function () {
     /**  
      * Even handlers for project cards
      */
+    // hover effect
     $("#R_FB").mouseenter(function () {
         $("#R_FB>.overlay").fadeIn(400);
     });
@@ -123,6 +124,13 @@ $(document).ready(function () {
     $("#R_ADM").mouseleave(function () {
         $("#R_ADM>.overlay").fadeOut(400);
     });
+    $("#teaching_exp").mouseenter(function () {
+        $("#teaching_exp>.overlay").fadeIn(400);
+    });
+    $("#teaching_exp").mouseleave(function () {
+        $("#teaching_exp>.overlay").fadeOut(400);
+    });
+    // link
     $("#R_FB>.overlay").on('click', function () {
         window.open("/projects/FB_filter_bubble.html", "_blank");
     });
@@ -132,4 +140,7 @@ $(document).ready(function () {
     $("#R_ADM>.overlay").on('click', function () {
         window.open("/projects/ADM.html", "_blank");
     });
+    $("#teaching_exp>.overlay").on('click', function () {
+        window.open("/other/teaching.html", "_blank");
+    });    
 });
