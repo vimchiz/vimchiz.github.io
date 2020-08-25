@@ -101,97 +101,35 @@ $(document).ready(function () {
             }
         });
 
-    //Initial Status
-    //(3)設定初始頁面的圖片及按鈕狀態
-    //LAMBDA
-    $("#Adult_2nd_MDS_btn").addClass('clicked');
-    $("#LAMBDA_2nd_MDS_G5_img").hide();
-    $("#LAMBDA_2nd_MDS_G2_img").hide();
 
-    //ADM
-    $("#Hedonism_beh_img").hide();
-    //    $("#Hedonism_brain_img").hide();
-    $("#Security_btn").addClass('clicked');
-    //    $("#Security_brain_img").addClass("hightlight");
-    //    $("#Hedonism_brain_img").addClass("blur");
-
-    //(4)維持按鈕點擊後的樣式變化(不受到unfocus,e.g., clicking other buttons,影響)
-    //LAMBDA
-    $("#Adult_2nd_MDS_btn").on('click', function () {
-        $("#Adult_2nd_MDS_btn").addClass('clicked');
-        $("#G2_2nd_MDS_btn").removeClass('clicked');
-        $("#G5_2nd_MDS_btn").removeClass('clicked');
-
-        $("#LAMBDA_2nd_MDS_G2_img").hide();
-        $("#LAMBDA_2nd_MDS_G5_img").hide();
-        $("#LAMBDA_2nd_MDS_adult_img").fadeIn("slow");
-
+    /**  
+     * Even handlers for project cards
+     */
+    $("#R_FB").mouseenter(function () {
+        $("#R_FB>.overlay").fadeIn(400);
     });
-    $("#G5_2nd_MDS_btn").on('click', function () {
-        $("#G5_2nd_MDS_btn").addClass('clicked');
-        $("#Adult_2nd_MDS_btn").removeClass('clicked');
-        $("#G2_2nd_MDS_btn").removeClass('clicked');
-
-        $("#LAMBDA_2nd_MDS_adult_img").hide();
-        $("#LAMBDA_2nd_MDS_G2_img").hide();
-        $("#LAMBDA_2nd_MDS_G5_img").fadeIn("slow");
+    $("#R_FB").mouseleave(function () {
+        $("#R_FB>.overlay").fadeOut(400);
     });
-    $("#G2_2nd_MDS_btn").on('click', function () {
-        $("#G2_2nd_MDS_btn").addClass('clicked');
-        $("#Adult_2nd_MDS_btn").removeClass('clicked');
-        $("#G5_2nd_MDS_btn").removeClass('clicked');
-
-        $("#LAMBDA_2nd_MDS_adult_img").hide();
-        $("#LAMBDA_2nd_MDS_G5_img").hide();
-        $("#LAMBDA_2nd_MDS_G2_img").fadeIn("slow");
+    $("#R_LAMBDA").mouseenter(function () {
+        $("#R_LAMBDA>.overlay").fadeIn(400);
     });
-    //ADM
-    $("#Security_btn").on('click', function () {
-        $("#Security_btn").addClass('clicked');
-        $("#Hedonism_btn").removeClass('clicked');
-
-        $("#Hedonism_beh_img").hide();
-        $("#Hedonism_brain_img").removeClass("hightlight");
-        $("#Hedonism_brain_img").addClass("blur");
-
-        $("#Security_beh_img").fadeIn("slow");
-        $("#Security_brain_img").removeClass("blur");
-        $("#Security_brain_img").addClass("hightlight");
-
+    $("#R_LAMBDA").mouseleave(function () {
+        $("#R_LAMBDA>.overlay").fadeOut(400);
     });
-    $("#Hedonism_btn").on('click', function () {
-        $("#Hedonism_btn").addClass('clicked');
-        $("#Security_btn").removeClass('clicked');
-
-        $("#Security_beh_img").hide();
-        $("#Security_brain_img").removeClass("hightlight");
-        $("#Security_brain_img").addClass("blur");
-
-        $("#Hedonism_beh_img").fadeIn("slow");
-        $("#Hedonism_brain_img").removeClass("blur");
-        $("#Hedonism_brain_img").addClass("hightlight");
-
+    $("#R_ADM").mouseenter(function () {
+        $("#R_ADM>.overlay").fadeIn(400);
     });
-
-    //(5)依照按鈕狀態切換圖片 (Merged to the "click" function)
-    //ADM
-    //    $("#Security_btn").on('focus', function () {
-    //        $("#Hedonism_beh_img").hide();
-    //        $("#Hedonism_brain_img").removeClass("hightlight");
-    //        $("#Hedonism_brain_img").addClass("blur");
-    //
-    //        $("#Security_beh_img").fadeIn("slow");
-    //        $("#Security_brain_img").removeClass("blur");
-    //        $("#Security_brain_img").addClass("hightlight");
-    //    });
-
-    //    $("#Hedonism_btn").on('focus', function () {
-    //        $("#Security_beh_img").hide();
-    //        $("#Security_brain_img").removeClass("hightlight");
-    //        $("#Security_brain_img").addClass("blur");
-    //
-    //        $("#Hedonism_beh_img").fadeIn("slow");
-    //        $("#Hedonism_brain_img").removeClass("blur");
-    //        $("#Hedonism_brain_img").addClass("hightlight");
-    //    });
+    $("#R_ADM").mouseleave(function () {
+        $("#R_ADM>.overlay").fadeOut(400);
+    });
+    $("#R_FB>.overlay").on('click', function () {
+        window.open("/projects/FB_filter_bubble.html", "_blank");
+    });
+    $("#R_LAMBDA>.overlay").on('click', function () {
+        window.open("/projects/LAMBDA.html", "_blank");
+    });
+    $("#R_ADM>.overlay").on('click', function () {
+        window.open("/projects/ADM.html", "_blank");
+    });
 });

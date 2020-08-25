@@ -216,6 +216,45 @@ div.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+
+div.overlay {
+    width: 90%;
+    position: absolute;
+    background: rgba(256, 256, 256, 0.6);
+    text-align: center;
+    display: none;
+}
+
+div.overlay>img {
+    opacity: 0.7;
+}
+
+#R_FB>div.overlay {
+    height: 400px;
+}
+
+#R_FB>div.overlay>img {
+    margin-top: 70px;
+}
+
+#R_LAMBDA>div.overlay {
+    height: 300px;
+}
+
+#R_LAMBDA>div.overlay>img {
+    margin-top: 30px;
+}
+
+#R_ADM>div.overlay {
+    height: 300px;
+}
+
+#R_ADM>div.overlay>img {
+    margin-top: 30px;
+}
+
+
+
 .btn-primary,
 .btn-xl,
 h1,
