@@ -1,9 +1,21 @@
+/** 
+ * Load the functions once the HTML content is ready.
+ */
 $(document).ready(function () {
+    // console.log("Load:" + document);
+    // /**  
+    //  * Place the navigation bar
+    //  */
+    // $.get("/navbar.html", function (data) {
+    //     $("#nav-placeholder").replaceWith(data);
+    // });
+
     //(1)控制NavBar的動態功能
     (function ($) { //function($)為匿名方法(anonymous function)
         "use strict"; //宣告只用"strict"的編碼方式
-        //函數一:點擊Navbar的物件，卷軸移至對應位置
-        //當點擊發生時，對a.page-scroll物件執行函數function(a)
+        /*
+         * Event handler: when clicking the tab in the navbar, scroll the page to the target
+         */
         $('a.page-scroll').on('click', function (event) {
             var $anchor = $(this); //宣告$anchor為該物件的值
 
@@ -12,16 +24,25 @@ $(document).ready(function () {
             //以動畫的方式，透過scrollTop將頁面移到a.page-scroll中
             //href的值之所在(透過offset()回報座標值:top & left)
             //僅使用回報的top的值
+            // get tge string of the href
+            var targetHref = $anchor.attr('href');
+            // remove the leading 'html.index' from 'html.index#intro'
+            // targetHref = targetHref.match(/#.*/)[0];
             $('html, body').stop().animate({
-                scrollTop: ($($anchor.attr('href')).offset().top - 50)
+                // find the div with JQuery selector $($anchor.attr('href'))
+                // - e.g., when $anchor.attr('href') = '#intro,  then '$(#intro) will select the div with # intro
+                // - note that $(html.index#intro) is not supported by JQuery
+                scrollTop: ($(targetHref).offset().top - 50)
             }, 1250, 'easeInOutExpo'); //指定animate的加速度函數為easeInOutExpo;且在1250ms內執行完畢
             event.preventDefault(); //阻止按鈕的預設功能
         });
 
-        //函數二:依照卷軸位置,即時更新Navbar物件的螢光標記
-        //scrollpsy的功能即為所需
+        /* 
+         * Synchronize the page scrolling and the highlight of tab in the nav bar
+         */
         //標的物件為navbar-fixed-top
         //offset:控制要延宕幾個像素材切換
+        //TODO: This feature is currently broken
         $('body').scrollspy({
             target: '.navbar-fixed-top',
             offset: 51
@@ -36,8 +57,7 @@ $(document).ready(function () {
             offset: {
                 top: 100
             }
-        })
-
+        });
     })(jQuery); // 宣告停止使用strict的編碼方式
 
     //(2)控制頁面內按鈕功能(in-page-scroll(Items not in the Navbar))
@@ -65,7 +85,7 @@ $(document).ready(function () {
                     //對html中的body進行animate()
                     //
                     $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 50
+                        scrollTop: target.offset().top - 100
                     }, 1250, function () {
                         //在動畫之後，確保物件已焦距
                         var $target = $(target);
@@ -73,200 +93,54 @@ $(document).ready(function () {
                         if ($target.is(":focus")) { // 檢驗是否已經聚焦
                             return false;
                         } else {
-                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.attr('tabindex', '-1'); // Adding tab index for elements that are not focusable
                             $target.focus(); // 重新嘗試聚焦
-                        };
+                        }
                     });
                 }
             }
         });
 
-    //Initial Status
-    //(3)設定初始頁面的圖片及按鈕狀態
-    //LAMBDA
-    $("#Adult_2nd_MDS_btn").addClass('clicked');
-    $("#LAMBDA_2nd_MDS_G5_img").hide();
-    $("#LAMBDA_2nd_MDS_G2_img").hide();
 
-    //ADM
-    $("#Hedonism_beh_img").hide();
-    //    $("#Hedonism_brain_img").hide();
-    $("#Security_btn").addClass('clicked');
-    //    $("#Security_brain_img").addClass("hightlight");
-    //    $("#Hedonism_brain_img").addClass("blur");
-
-    //(4)維持按鈕點擊後的樣式變化(不受到unfocus,e.g., clicking other buttons,影響)
-    //LAMBDA
-    $("#Adult_2nd_MDS_btn").on('click', function () {
-        $("#Adult_2nd_MDS_btn").addClass('clicked');
-        $("#G2_2nd_MDS_btn").removeClass('clicked');
-        $("#G5_2nd_MDS_btn").removeClass('clicked');
-
-        $("#LAMBDA_2nd_MDS_G2_img").hide();
-        $("#LAMBDA_2nd_MDS_G5_img").hide();
-        $("#LAMBDA_2nd_MDS_adult_img").fadeIn("slow");
-
+    /**  
+     * Even handlers for project cards
+     */
+    // hover effect
+    $("#R_FB").mouseenter(function () {
+        $("#R_FB>.overlay").fadeIn(400);
     });
-    $("#G5_2nd_MDS_btn").on('click', function () {
-        $("#G5_2nd_MDS_btn").addClass('clicked');
-        $("#Adult_2nd_MDS_btn").removeClass('clicked');
-        $("#G2_2nd_MDS_btn").removeClass('clicked');
-
-        $("#LAMBDA_2nd_MDS_adult_img").hide();
-        $("#LAMBDA_2nd_MDS_G2_img").hide();
-        $("#LAMBDA_2nd_MDS_G5_img").fadeIn("slow");
+    $("#R_FB").mouseleave(function () {
+        $("#R_FB>.overlay").fadeOut(400);
     });
-    $("#G2_2nd_MDS_btn").on('click', function () {
-        $("#G2_2nd_MDS_btn").addClass('clicked');
-        $("#Adult_2nd_MDS_btn").removeClass('clicked');
-        $("#G5_2nd_MDS_btn").removeClass('clicked');
-
-        $("#LAMBDA_2nd_MDS_adult_img").hide();
-        $("#LAMBDA_2nd_MDS_G5_img").hide();
-        $("#LAMBDA_2nd_MDS_G2_img").fadeIn("slow");
+    $("#R_LAMBDA").mouseenter(function () {
+        $("#R_LAMBDA>.overlay").fadeIn(400);
     });
-    //ADM
-    $("#Security_btn").on('click', function () {
-        $("#Security_btn").addClass('clicked');
-        $("#Hedonism_btn").removeClass('clicked');
-
-        $("#Hedonism_beh_img").hide();
-        $("#Hedonism_brain_img").removeClass("hightlight");
-        $("#Hedonism_brain_img").addClass("blur");
-
-        $("#Security_beh_img").fadeIn("slow");
-        $("#Security_brain_img").removeClass("blur");
-        $("#Security_brain_img").addClass("hightlight");
-
+    $("#R_LAMBDA").mouseleave(function () {
+        $("#R_LAMBDA>.overlay").fadeOut(400);
     });
-    $("#Hedonism_btn").on('click', function () {
-        $("#Hedonism_btn").addClass('clicked');
-        $("#Security_btn").removeClass('clicked');
-
-        $("#Security_beh_img").hide();
-        $("#Security_brain_img").removeClass("hightlight");
-        $("#Security_brain_img").addClass("blur");
-
-        $("#Hedonism_beh_img").fadeIn("slow");
-        $("#Hedonism_brain_img").removeClass("blur");
-        $("#Hedonism_brain_img").addClass("hightlight");
-
+    $("#R_ADM").mouseenter(function () {
+        $("#R_ADM>.overlay").fadeIn(400);
     });
-
-    //(5)依照按鈕狀態切換圖片 (Merged to the "click" function)
-    //ADM
-    //    $("#Security_btn").on('focus', function () {
-    //        $("#Hedonism_beh_img").hide();
-    //        $("#Hedonism_brain_img").removeClass("hightlight");
-    //        $("#Hedonism_brain_img").addClass("blur");
-    //
-    //        $("#Security_beh_img").fadeIn("slow");
-    //        $("#Security_brain_img").removeClass("blur");
-    //        $("#Security_brain_img").addClass("hightlight");
-    //    });
-
-    //    $("#Hedonism_btn").on('focus', function () {
-    //        $("#Security_beh_img").hide();
-    //        $("#Security_brain_img").removeClass("hightlight");
-    //        $("#Security_brain_img").addClass("blur");
-    //
-    //        $("#Hedonism_beh_img").fadeIn("slow");
-    //        $("#Hedonism_brain_img").removeClass("blur");
-    //        $("#Hedonism_brain_img").addClass("hightlight");
-    //    });
-    //(6)回復"關於我"的按鈕之狀態
-    $("#About_btn").on('click', function () {
-        $("#About_btn").addClass('clicked');
+    $("#R_ADM").mouseleave(function () {
+        $("#R_ADM>.overlay").fadeOut(400);
     });
-    $('#intro').on('mousemove', function () {
-        $("#About_btn").removeClass('clicked');
+    $("#teaching_exp").mouseenter(function () {
+        $("#teaching_exp>.overlay").fadeIn(400);
     });
-
-    //(7)關於計算機的按鈕
-    $("#random").on('click', function () {
-        $("#random").addClass('clicked');
+    $("#teaching_exp").mouseleave(function () {
+        $("#teaching_exp>.overlay").fadeOut(400);
     });
-    $('#projects').on('mousemove', function () {
-        $("#random").removeClass('clicked');
+    // link
+    $("#R_FB>.overlay").on('click', function () {
+        window.open("/projects/FB_filter_bubble.html", "_blank");
     });
-
-    $("#predict").on('click', function () {
-        $("#predict").addClass('clicked');
+    $("#R_LAMBDA>.overlay").on('click', function () {
+        window.open("/projects/LAMBDA.html", "_blank");
     });
-
-    $('#projects').on('mousemove', function () {
-        $("#predict").removeClass('clicked');
+    $("#R_ADM>.overlay").on('click', function () {
+        window.open("/projects/ADM.html", "_blank");
     });
-
-    //    //(8)The prediction machine
-    //    // Define random number generators
-    //    var random = function (start, end) {
-    //        return Math.floor(Math.random() * (end - start + 1)) + start
-    //    }
-    //    //Convert Logit to Probabillity
-    //    var logit2prob = function (logit) {
-    //        var odds = Math.exp(logit);
-    //        var prob = odds / (1 + odds);
-    //        return prob
-    //    };
-    //
-    //    $('#random').on('click', function () {
-    //        var prob = 0;
-    //        var mag = 0;
-    //        prob = random(25, 75);
-    //        mag = random(4, 110);
-    //        //For printing, convert NTD to USD
-    //        var magUSD = mag / 30;
-    //        //Round to the second decimals and also fix the number of significant dogits
-    //        magUSD = magUSD.toFixed(1);
-    //        // Clear the fields of mag. and prob.
-    //        $("#prob").empty();
-    //        $("#mag").empty();
-    //
-    //        // Put $div into div#data so that the numbers could be shown
-    //        $("#prob").append(String(prob) + " %");
-    //        $("#mag").append(String(magUSD) + " USD");
-    //    });
-    //
-    //    $('#predict').on('click', function () {
-    //        //Extract value
-    //        var predict = 0;
-    //        //Get the input with regular expression
-    //        var z_prob = Number(/\d+/.exec($('#prob').text()));
-    //        var z_mag = Number(/\d+/.exec($('#mag').text()));
-    //        var z_Sec = Number(/\d+/.exec($('#Security').val()));
-    //        var z_Hed = Number(/\d+/.exec($('#Hedonism').val()));
-    //        var gender = /(F|M)/.exec($('#gender').text());
-    //        var MCAR = (z_Sec + z_Hed) / 2;
-    //
-    //        //z transformation
-    //        z_prob = (z_prob - 49.35) / (28.69);
-    //        z_mag = (z_mag - 55.32) / (40.05);
-    //        z_Sec = ((z_Sec - MCAR) - (-0.1212)) / (0.6747);
-    //        z_Hed = ((z_Sec - MCAR) - (0.0807)) / (1.3716);
-    //        gender = (gender == "F") * (-1) + (gender == "M") * (1);
-    //
-    //        //Predict based on Marginal GLMM model
-    //        predict = 0.32204 + (-0.01224) * (gender) +
-    //            0.02924 * z_Hed + -0.16881 * z_mag + 5.90464 * z_prob + (-0.38091) * z_Sec + (-0.10082) * z_Hed * z_mag +
-    //            0.15019 * z_Hed * z_prob + 0.67848 * z_mag * z_prob + 0.11744 * z_mag * z_Sec + 0.90734 * z_prob * z_Sec +
-    //            0.34679 * z_Hed * z_mag + 0.01904 * z_mag * z_Sec;
-    //
-    //        //Convert logit back to p
-    //        predict = logit2prob(predict);
-    //        predict = predict * 100;
-    //
-    //        //Print out the predicted outcome
-    //        if (predict > 50) {
-    //            //round to the first decimals
-    //            predict = predict.toFixed(2);
-    //            var outcome = "Prediction: You would ACCEPT the trial (with " + predict + " % certainty).";
-    //        } else {
-    //            predict = 100 - predict;
-    //            //round to the first decimals
-    //            predict = predict.toFixed(2);
-    //            var outcome = "Prediction: You would REJECT the trial (with " + predict + " % certainty).";
-    //        }
-    //        $("#result").val(String(outcome));
-    //    });
+    $("#teaching_exp>.overlay").on('click', function () {
+        window.open("/other/teaching.html", "_blank");
+    });    
 });

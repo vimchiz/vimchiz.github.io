@@ -1,19 +1,21 @@
-header {
-    background-image: url(../img/header-library_2.jpg);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-align: center;
-    color: #fff;
-    min-height: 100%;
+/* the first container in the page below the nav bar */
+.top-container {
+    padding-top: 50px;
 }
 
-section#headerresearch,
-section#headerteaching,
+section#headerpage {
+    color: black;
+    opacity: 1;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 150px;
+    background-attachment: fixed;
+}
+
+section#headerpublication,
+section#headerexperience,
+/* section#headerresearch, */
+section#headerother,
 section#headerproject,
 section#headercontact {
     color: black;
@@ -21,28 +23,57 @@ section#headercontact {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 300px;
+    min-height: 200px;
     background-attachment: fixed;
 }
 
-section#headerresearch {
-    background-image: url(../img/header/Research-cut.jpg);
+section#headerpage {
+    background-image: url(../img/header-library_2_cropped.jpg);
 }
 
-section#headerteaching {
-    background-image: url(../img/header/Teaching-cut.jpg);
+section#headerpublication {
+    background-image: url(../img/header/Publication-compressed-bright-cropped.JPG);
+}
+
+section#headerexperience {
+    background-image: url(../img/header/Experience-bright.png);
 }
 
 section#headerproject {
-    background-image: url(../img/header/Project-cut2.JPG);
+    background-image: url(../img/header/Project-cut.jpg);
+}
+
+section#headerother {
+    background-image: url(../img/header/Teaching-cut-compressed.jpg);
 }
 
 section#headercontact {
-    background-image: url(../img/header/contact-cut.jpg);
+    background-image: url(../img/header/contact-cut-compressed.jpg);
 }
 
-.line,
-    {
+
+.badge-container {
+    height: 50px;
+}
+
+img.icon-badge {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-top: 10px;
+}
+
+img.icon-badge:hover {
+    height: 50px;
+    margin-top: 0px;
+}
+
+img.center-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.line {
     border-bottom-width: 1px;
     border-bottom-color: rgb(221, 221, 221);
     border-bottom-style: solid;
@@ -146,24 +177,96 @@ body {
     webkit-tap-highlight-color: #fed136
 }
 
-p {
-    font-size: 14px;
+p,
+span {
+    font-size: 16px;
     line-height: 1.2
 }
 
-.large {
-    font-size: 16px
+li{
+    font-size: 16px;
 }
 
-.larger {
+p.large,
+span.large,
+li.large,
+ul.large,
+ol.large {
     font-size: 18px
 }
 
-.line {
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(221, 221, 221);
-    border-bottom-style: solid;
-    padding: 12px 0px 12px 0px
+p.larger,
+span.larger,
+li.larger,
+ul.large,
+ol.large {
+    font-size: 20px
+}
+
+div.card {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: .25rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+div.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+div.overlay {
+    width: 90%;
+    position: absolute;
+    /* background: red; */
+    background: rgba(256, 256, 256, 0.6);
+    text-align: center;
+    display: none;
+}
+
+/* Auto-resize the figure within each project card */
+#R_FB>img,
+#R_LAMBDA>img,
+#R_ADM>img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+div.overlay>img {
+    opacity: 0.7;
+}
+
+#R_FB>div.overlay {
+    height: 400px;
+}
+
+#R_FB>div.overlay>img {
+    margin-top: 70px;
+}
+
+#R_LAMBDA>div.overlay {
+    height: 300px;
+}
+
+#R_LAMBDA>div.overlay>img {
+    margin-top: 30px;
+}
+
+#R_ADM>div.overlay {
+    height: 300px;
+}
+
+#R_ADM>div.overlay>img {
+    margin-top: 30px;
+}
+
+#teaching_exp>div.overlay {
+    height: 300px;
+}
+
+#teaching_exp>div.overlay>img {
+    margin-top: 70px;
 }
 
 .btn-primary,
@@ -174,7 +277,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: capitalize;
     font-weight: 700
 }
@@ -242,19 +345,8 @@ a#nav-project:focus {
     border-radius: 3px;
 }
 
-ul#nav_Research {
+a.page-scroll {
     background-color: #222;
-    color: #fed136;
-}
-
-ul#nav_Research li a.page-scroll:hover {
-    color: #fed136;
-    background-color: #222;
-}
-
-ul#nav_Research:focus {
-    background-color: #222;
-    color: #fed136;
 }
 
 .btn-primary.disabled,
@@ -393,17 +485,24 @@ fieldset[disabled] .btn-xl:hover {
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a:hover {
     color: #fed136;
-    outline: 0
+    outline: 0;
+    border-radius: 0
 }
 
-.navbar-custom .navbar-nav > .active > a {
+a.focus {
+    border-radius: 3px;
+    color: #fff;
+    background-color: #fed136
+}
+
+.navbar-custom .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
     background-color: #fed136
 }
 
-.navbar-custom .navbar-nav > .active > a:focus,
-.navbar-custom .navbar-nav > .active > a:hover {
+.navbar-custom .navbar-nav>.active>a:focus,
+.navbar-custom .navbar-nav>.active>a:hover {
     color: #fff;
     background-color: #fec503
 }
@@ -416,13 +515,16 @@ fieldset[disabled] .btn-xl:hover {
         -moz-transition: all .3s;
         transition: all .3s
     }
-    .navbar-custom .navbar-nav > .active > a {
+
+    .navbar-custom .navbar-nav>.active>a {
         border-radius: 3px
     }
+
     .navbar-custom.affix {
         background-color: #222;
         padding: 10px 0
     }
+
     .navbar-custom.affix .navbar-brand {
         font-size: 1.5em
     }
@@ -455,6 +557,7 @@ header .intro-text .intro-heading {
         padding-top: 300px;
         padding-bottom: 200px
     }
+
     header .intro-text .intro-lead-in {
         font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-style: italic;
@@ -462,6 +565,7 @@ header .intro-text .intro-heading {
         line-height: 40px;
         margin-bottom: 25px
     }
+
     header .intro-text .intro-heading {
         font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-transform: uppercase;
@@ -478,9 +582,6 @@ section h3.section-subheading {
     font-style: italic
 }
 
-section {
-    padding: 70px 0
-}
 
 section h1.section-heading {
     font-size: 40px;
@@ -497,25 +598,25 @@ section h2.section-heading {
 section h3.section-heading {
     font-size: 28px;
     margin-top: 0;
-    margin-bottom: 15px
+    /* margin-bottom: 15px */
 }
 
 section h4.section-heading {
     font-size: 22px;
     margin-top: 0;
-    margin-bottom: 15px
+    /* margin-bottom: 15px */
 }
 
 section h3.section-subheading {
     font-size: 20px;
     text-transform: none;
     font-weight: 400;
-    margin-bottom: 75px
+    /* margin-bottom: 75px */
 }
 
 @media (min-width:768px) {
     section {
-        padding: 70px 0
+        padding: 40px 0
     }
 }
 
@@ -621,23 +722,23 @@ footer ul.quicklinks {
     margin-left: -1.5px
 }
 
-.timeline > li {
+.timeline>li {
     margin-bottom: 50px;
     position: relative;
     min-height: 50px
 }
 
-.timeline > li:after,
-.timeline > li:before {
+.timeline>li:after,
+.timeline>li:before {
     content: " ";
     display: table
 }
 
-.timeline > li:after {
+.timeline>li:after {
     clear: both
 }
 
-.timeline > li .timeline-panel {
+.timeline>li .timeline-panel {
     width: 100%;
     float: right;
     padding: 0 20px 0 100px;
@@ -645,21 +746,21 @@ footer ul.quicklinks {
     text-align: left
 }
 
-.timeline > li .timeline-panel:before {
+.timeline>li .timeline-panel:before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto
 }
 
-.timeline > li .timeline-panel:after {
+.timeline>li .timeline-panel:after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
     right: auto
 }
 
-.timeline > li .timeline-image {
+.timeline>li .timeline-image {
     left: 0;
     margin-left: 0;
     width: 80px;
@@ -673,33 +774,33 @@ footer ul.quicklinks {
     text-align: center
 }
 
-.timeline > li .timeline-image h4 {
+.timeline>li .timeline-image h4 {
     font-size: 10px;
     margin-top: 12px;
     line-height: 14px
 }
 
-.timeline > li.timeline-inverted > .timeline-panel {
+.timeline>li.timeline-inverted>.timeline-panel {
     float: right;
     text-align: left;
     padding: 0 20px 0 100px
 }
 
-.timeline > li.timeline-inverted > .timeline-panel:before {
+.timeline>li.timeline-inverted>.timeline-panel:before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto
 }
 
-.timeline > li.timeline-inverted > .timeline-panel:after {
+.timeline>li.timeline-inverted>.timeline-panel:after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
     right: auto
 }
 
-.timeline > li:last-child {
+.timeline>li:last-child {
     margin-bottom: 0
 }
 
@@ -712,8 +813,8 @@ footer ul.quicklinks {
     text-transform: none
 }
 
-.timeline .timeline-body > p,
-.timeline .timeline-body > ul {
+.timeline .timeline-body>p,
+.timeline .timeline-body>ul {
     margin-bottom: 0
 }
 
@@ -721,28 +822,33 @@ footer ul.quicklinks {
     .timeline:before {
         left: 50%
     }
-    .timeline > li {
+
+    .timeline>li {
         margin-bottom: 100px;
         min-height: 100px
     }
-    .timeline > li .timeline-panel {
+
+    .timeline>li .timeline-panel {
         width: 41%;
         float: left;
         padding: 0 20px 20px 30px;
         text-align: right
     }
-    .timeline > li .timeline-image {
+
+    .timeline>li .timeline-image {
         width: 100px;
         height: 100px;
         left: 50%;
         margin-left: -50px
     }
-    .timeline > li .timeline-image h4 {
+
+    .timeline>li .timeline-image h4 {
         font-size: 13px;
         margin-top: 16px;
         line-height: 18px
     }
-    .timeline > li.timeline-inverted > .timeline-panel {
+
+    .timeline>li.timeline-inverted>.timeline-panel {
         float: right;
         text-align: left;
         padding: 0 30px 20px 20px
@@ -750,19 +856,23 @@ footer ul.quicklinks {
 }
 
 @media (min-width:992px) {
-    .timeline > li .timeline-panel,
-    .timeline > li.timeline-inverted > .timeline-panel {
+
+    .timeline>li .timeline-panel,
+    .timeline>li.timeline-inverted>.timeline-panel {
         padding: 0 20px 20px
     }
-    .timeline > li {
+
+    .timeline>li {
         min-height: 150px
     }
-    .timeline > li .timeline-image {
+
+    .timeline>li .timeline-image {
         width: 150px;
         height: 150px;
         margin-left: -75px
     }
-    .timeline > li .timeline-image h4 {
+
+    .timeline>li .timeline-image h4 {
         font-size: 18px;
         margin-top: 30px;
         line-height: 26px
@@ -770,21 +880,25 @@ footer ul.quicklinks {
 }
 
 @media (min-width:1200px) {
-    .timeline > li {
+    .timeline>li {
         min-height: 170px
     }
-    .timeline > li .timeline-panel {
+
+    .timeline>li .timeline-panel {
         padding: 0 20px 20px 100px
     }
-    .timeline > li .timeline-image {
+
+    .timeline>li .timeline-image {
         width: 170px;
         height: 170px;
         margin-left: -85px
     }
-    .timeline > li .timeline-image h4 {
+
+    .timeline>li .timeline-image h4 {
         margin-top: 40px
     }
-    .timeline > li.timeline-inverted > .timeline-panel {
+
+    .timeline>li.timeline-inverted>.timeline-panel {
         padding: 0 100px 20px 20px
     }
 }
@@ -1002,35 +1116,35 @@ img.blur {
 }
 
 .btn.threeD.pink {
-     background-color: #F8766D;
-    color: #808080;   
+    background-color: #F8766D;
+    color: #808080;
 }
 
 .btn.threeD.green {
     background-color: #b3ffc9;
-    color: #808080;   
+    color: #808080;
 }
 
 .btn.threeD.cyan {
     background-color: #b3cfff;
-    color: #808080;  
+    color: #808080;
 }
 
 .btn.threeD.cyan.clicked {
     background-color: #619CFF;
-    color: black;  
+    color: black;
 }
 
 .btn.threeD.pink.clicked {
     background-color: #F8766D;
-    color: black;  
+    color: black;
 }
 
 .btn.threeD.green.clicked {
     background-color: #00BA38;
-    color: black;   
+    color: black;
 }
 
 .justify {
-   text-align: justify;
+    text-align: justify;
 }

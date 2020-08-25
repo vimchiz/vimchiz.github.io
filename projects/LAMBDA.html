@@ -1,0 +1,170 @@
+<!-- 
+    This page is for the LAMBDA project.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--The style of css etc.-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Yun-Shiuan (Sean) Chuang</title>
+  <!-- Style Sheets -->
+  <!-- Bootstrap Core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Theme CSS -->
+  <link href="/css/yunshiuan.min.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+     <![endif]-->
+
+</head>
+
+<body class="index">
+  <!-- 
+        Navigation Bar 
+        - will be filled in by JS.
+    -->
+  <div id="nav-placeholder"></div>
+
+  <!--Research project: LAMBDA, fraction cognition-->
+  <div class="container top-container" id="R_LAMBDA">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="line">Fraction Neural Representation In Human Parietal Cortex: <br> Format-dependent magnitude
+          encoding</h2>
+        <h3 class="text-center line">Research Question </h3>
+
+        <div class="col-lg-7 text-center">
+          <h4 class="text-center">Fraction Comparison Task</h4>
+          <p class="text-left larger">Fraction could take different formats: either symbolic or
+            non-symbolic.</p>
+          <img src="/img/projects/LAMBDA_research_design.png" class="img-responsive img-thumbnail" alt=""
+            id="LAMBDA_research_design">
+        </div>
+
+        <div class="col-lg-5 text-center">
+          <h4 class="text-center">Format-dependent or <br> Format-Independent Representations? </h4>
+          <p class="text-left larger"> <b>Question:</b> IPS encodes the numeric value of fraction of all
+            formats, but are they encoded in the same way?<br /><br /><br /><br /></p>
+          <img src="/img/projects/LAMBDA_brain_with_legend.png" class="img-responsive img-thumbnail" alt=""
+            id="LAMBDA_brain">
+        </div>
+
+        <div class="col-lg-12 text-center">
+          <h3 class="text-center line">Methods</h3>
+          <h4 class="text-center">Representational Disimmilarity Matrices (RDMs)</h4>
+
+          <p class="text-left large justify">RDMs represent the interrelationship between fractions with
+            different formats and values based on research hypotheses (<b>conceptual RDMs</b>) or
+            empirical fMRI data (<b>neural RDMs</b>).<br /><br /><i>*Note that the log-abosolute magnitude
+              model (log-A) resembles the neural data in IPSs.</i></p>
+
+          <img src="/img/projects/LAMBDA_base_RDMs.png" class="img-responsive img-thumbnail" alt=""
+            id="LAMBDA_base_RDMs">
+        </div>
+        <div class="col-lg-8 text-center">
+          <h4 class="text-center">Construct Format-dependent representation models: <br>Mixing Magnitude
+            Models with Format RDMs</h4>
+          <p class="text-left larger"><br />Mixing a magnitude RDM with a format RDM to produce a
+            format-dependent magnitude RDM.</p>
+          <br /><br /><br /><br />
+          <p class="text-left large"> <i>*Note that the hybrid model (e.g.,
+              GxA-6) resembles the neural data in IPSs better than the pure magnitude model log-A
+              above.</i></p><br /><br />
+          <img src="/img/projects/LAMBDA_mixing_conceptual_RDMs.png" class="img-responsive img-thumbnail" alt=""
+            id="LAMBDA_1st_MDS">
+        </div>
+
+        <div class="col-lg-4 text-center">
+          <h4 class="text-center">Multidimensional Scaling (MDS) dipicts the distances between RDMs.</h4>
+          <p class="text-left larger justify">Click the buttons to see each group's MDS. <i>(*Note that
+              the hybrid models are closer to IPS neural RDMs)</i></p>
+
+          <div class="col-lg-4 text-center" style="padding-top: 0px">
+            <button type="button" class="btn btn-xl round MDS_2nd add_height threeD pink"
+              id="Adult_2nd_MDS_btn">Adult</button></div>
+
+          <div class="col-lg-4 text-center" style="padding-top: 0px">
+            <button type="button" class="btn btn-xl round MDS_2nd threeD green"
+              id="G5_2nd_MDS_btn">5th<br>Graders</button></div>
+          <div class="col-lg-4 text-center" style="padding-top: 0px">
+            <button type="button" class="btn btn-xl round MDS_2nd threeD cyan"
+              id="G2_2nd_MDS_btn">2nd<br>Graders</button></div>
+
+          <div id="LAMBDA_2nd_MDS_adult_img">
+            <div class="row">
+              <img src="/img/projects/LAMBDA_2nd_MDS_adult.png" class="img-responsive img-thumbnail" alt="">
+            </div>
+          </div>
+          <div id="LAMBDA_2nd_MDS_G5_img">
+            <div class="row">
+              <img src="/img/projects/LAMBDA_2nd_MDS_G5.png" class="img-responsive img-thumbnail" alt="">
+            </div>
+          </div>
+          <div id="LAMBDA_2nd_MDS_G2_img">
+            <div class="row">
+              <img src="/img/projects/LAMBDA_2nd_MDS_G2.png" class="img-responsive img-thumbnail" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 text-center">
+          <h3 class="text-center line">Research Results support <br>the Format-dependent Representation of
+            fraction numeric value</h3>
+          <div class="col-lg-6 text-center">
+            <h3 class="text-center">Relatedness Test Result</h3>
+            <p class="text-left larger justify">Relatedness test result shows that the
+              <b>format-dependent models</b> could better explain the neural IPS RDMs than
+              format-independent models.</p>
+            <img src="/img/projects/LAMBDA_relatedness_test.png" class="img-responsive img-thumbnail" alt=""
+              id="LAMBDA_1st_MDS">
+          </div>
+          <div class="col-lg-6 text-center">
+            <h3 class="text-center">Developmental Trend</h3>
+            <p class="text-left larger justify"> Adults’s IPSs are more sensitive to the abstract
+              magnitude information and is less format-dependent. </p>
+            </br>
+            <img src="/img/projects/LAMBDA_developmental_trend.png" class="img-responsive img-thumbnail" alt=""
+              id="LAMBDA_1st_MDS">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScripts -->
+  <!-- jQuery -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--Plugin JQuery-->
+  <script src="/js/jqBootstrapValidation.js"></script>
+  <!--    <script src="js/jquery-3.2.1.js"></script>-->
+
+  <!-- Default: Version: 1.3 Plugin JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
+    integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous">
+  </script>
+
+  <!-- Theme JavaScript -->
+  <script src="/js/LAMBDA.js"></script>
+</body>
+
+</html>
