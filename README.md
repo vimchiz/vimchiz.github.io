@@ -1,4 +1,4 @@
 # yunshiuan.github.io
 
 My personal website.
-To view, visit [https://yunshiuan.github.io/](https://yunshiuan.github.io/)
+To view the website, please visit [https://yunshiuan.github.io/](https://yunshiuan.github.io/)
